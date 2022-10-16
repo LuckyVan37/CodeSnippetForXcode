@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Add_UI_WKWebview_For_View_Loading_Local_File</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func add_wk_webview() {
+        let ui_wkwebView = WKWebView(frame: self.view.bounds)
+        self.view.addSubview(ui_wkwebView)
+        if  let file_path = Bundle.main.path(forResource: "index", ofType: "html",inDirectory: "sound") {
+            let url = URL(fileURLWithPath: file_path)
+            let url_request = URLRequest(url: url)
+            ui_wkwebView.load(url_request)
+        }
+        
+        wk_webview = ui_wkwebView
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A8D275FA-D307-46AB-B3AB-55BBDD515F1E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给View添加UIWebView_加载本地文件</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Add_UI_WKWebview_For_View_Loading_Local_File</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

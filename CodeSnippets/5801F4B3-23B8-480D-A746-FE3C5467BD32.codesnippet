@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Manage_View_LifeCycle_By_Storyboard_CallBack_API</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - manage storyboard  View lifecycle  
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    return YES;
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"identifier:%@",segue.identifier);
+    ((AnimalChooserViewController *)segue.destinationViewController).delegate=self;
+}
+- (BOOL)canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController sender:( id)sender {
+    return YES;
+}
+- (BOOL)canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender {
+    NSLog(@"fromViewController:%@",fromViewController);
+    return YES;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5801F4B3-23B8-480D-A746-FE3C5467BD32</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通过故事版的回调来管理视图的生命周期</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Manage_View_LifeCycle_By_Storyboard_CallBack_API</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

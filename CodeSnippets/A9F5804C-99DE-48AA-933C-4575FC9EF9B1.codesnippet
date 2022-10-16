@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Transformation_Bettwen_Array_And_Str</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static void ExcuteArrayAndStrTransformationQueue(void){
+    NSArray *arr = @[@"zxh", @"cj", @"luckyVan"];
+    // 需求: 用-将所有的姓名连接起来生成一个字符串
+    // 1.定义一个可变字符串保存拼接之后的结果
+    NSMutableString *strM = [NSMutableString string];
+    // 2.遍历数组, 取出数组中的每一个元素, 将元素添加到可变字符串中
+    for (NSString *str in arr) {
+        [strM appendString:str];
+        // 3.每次添加完毕之后再添加一个-
+        [strM appendString:@"-"];
+    }
+    [strM deleteCharactersInRange:NSMakeRange(strM.length - 1, 1)];
+    NSLog(@"strM = %@", strM);
+    NSString *str = [arr componentsJoinedByString:@"**"];
+    NSLog(@"str = %@", str);
+    // 通过一个字符串生成一个数组
+    // 也叫做字符串切割
+    NSString *str2 = @"luckyVan**rigina**love";
+    NSArray *arr2 = [str2 componentsSeparatedByString:@"**"];
+    NSLog(@"arr = %@", arr2);
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A9F5804C-99DE-48AA-933C-4575FC9EF9B1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Transformation_Bettwen_Array_And_Str</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Transformation_Bettwen_Array_And_Str</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

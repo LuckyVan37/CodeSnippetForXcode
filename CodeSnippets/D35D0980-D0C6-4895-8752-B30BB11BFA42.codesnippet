@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_API_CreateFunc_Return_Func</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>typealias responseHandler = (_:Int,_:Int,_:Int) -&gt; Int 
+func nextHandler(isOk:Bool) -&gt; responseHandler {
+    func f1(a:Int,b:Int,c:Int) -&gt; Int{
+         return a + b + c
+    }
+    func f2(a:Int,b:Int,c:Int) -&gt; Int{
+         return a - b - c
+    }
+    return isOk ? f1 : f2
+}
+
+let r =  nextHandler(isOk: true)(52,37,13)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D35D0980-D0C6-4895-8752-B30BB11BFA42</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>创建函数嵌套</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_API_CreateFunc_Return_Func</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

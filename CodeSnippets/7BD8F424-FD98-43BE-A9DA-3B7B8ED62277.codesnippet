@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string> Swift_GCD: dispatch_barrier_async【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> func dispatch_barrier_async(){
+        //1.创建队列
+        let concurrentQueue = DispatchQueue(label: "1", qos: .default, attributes: .concurrent)
+        //2.异步函数
+        concurrentQueue.async {
+            for i in 0...100 {
+                print("download1-\(i),Thread:\(Thread.current)")
+            }
+        }
+        concurrentQueue.async {
+            for i in 0...100 {
+                print("download2-\(i),Thread:\(Thread.current)")
+            }
+        }
+        //3.执行栅栏函数
+        concurrentQueue.async(execute: DispatchWorkItem(qos: .default, flags: .barrier, block: {
+            print("+++++++++++++++++++++++++++++++++++++++++++")
+        }))
+        //4.异步函数
+        concurrentQueue.async {
+            for i in 0...100 {
+                print("download3-\(i),Thread:\(Thread.current)")
+            }
+        }
+        concurrentQueue.async {
+            for i in 0...100 {
+                print("download4-\(i),Thread:\(Thread.current)")
+            }
+        }
+    }
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7BD8F424-FD98-43BE-A9DA-3B7B8ED62277</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程：通过gcd栅栏函数,按顺序执行代码块操作</string>
+	<key>IDECodeSnippetTitle</key>
+	<string> Swift_GCD: dispatch_barrier_async【ExcuteHandler_On_Concurrent_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

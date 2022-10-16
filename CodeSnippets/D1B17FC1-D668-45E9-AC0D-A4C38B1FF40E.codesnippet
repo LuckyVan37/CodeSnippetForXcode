@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Delegate_Create_Protocol</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+@class &lt;#name#&gt;;
+@protocol &lt;#protocol name#&gt; &lt;NSObject&gt;
+@required
+&lt;#methods#&gt;
+@optional
+&lt;#methods#&gt;
+@end
+
+
+@interface &lt;#className#&gt; :&lt;#superClass#&gt;
+//Desc:
+@property (weak, nonatomic) id &lt;&lt;#protocol name#&gt;&gt; delegate;
+
+@end
+if ([self.delegate respondsToSelector:@selector(&lt;#selector#&gt;)] ) {
+    [self.delegate &lt;#selector#&gt;];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D1B17FC1-D668-45E9-AC0D-A4C38B1FF40E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Delegate_Create_Protocol</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Delegate_Create_Protocol</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

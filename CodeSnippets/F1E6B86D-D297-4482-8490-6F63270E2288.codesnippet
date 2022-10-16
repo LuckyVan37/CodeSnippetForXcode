@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_GCD: dispatch_group_notify【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    //1.创建队列
+    dispatch_queue_t queue =dispatch_get_global_queue(0, 0);
+    
+    //2.创建队列组
+    dispatch_group_t group = dispatch_group_create();
+    
+    //3.异步函数
+    /*
+     1)封装任务
+     2)把任务添加到队列中
+     dispatch_async(queue, ^{
+     NSLog(@"1----%@",[NSThread currentThread]);
+     });
+     */
+    /*
+     1)封装任务
+     2)把任务添加到队列中
+     3)会监听任务的执行情况,通知group
+     */
+    dispatch_group_async(group, queue, ^{
+        NSLog(@"1----%@",[NSThread currentThread]);
+    });
+    
+    
+    dispatch_group_async(group, queue, ^{
+        NSLog(@"2----%@",[NSThread currentThread]);
+    });
+    
+    dispatch_group_async(group, queue, ^{
+        NSLog(@"3----%@",[NSThread currentThread]);
+    });
+    //拦截通知,当队列组中所有的任务都执行完毕的时候回进入到下面的方法
+    dispatch_group_notify(group, queue, ^{
+        
+        NSLog(@"-------dispatch_group_notify-------");
+    });</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F1E6B86D-D297-4482-8490-6F63270E2288</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程：拦截通知,当队列组中所有的任务都执行完毕后,回到Notify代码块中执行代码</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_GCD: dispatch_group_notify【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

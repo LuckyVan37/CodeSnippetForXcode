@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_ModelParser_Map_ReplacedKeyFromPropertyName</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    Class &lt;#ClassName#&gt; = NSClassFromString(@"&lt;#MappingModelClassName#&gt;");
+    if (&lt;#ClassName#&gt;) {
+        [&lt;#ClassName#&gt; mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+            return @{
+                 @"Id" : @"id",
+                 @"&lt;#ArrayInstanceName#&gt;" : @"&lt;#itemClassOfArray#&gt;",
+                
+            };
+        }];
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6E40F7B0-7D32-4254-A156-F28690B31361</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_ModelParser_Map_ReplacedKeyFromPropertyName</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_ModelParser_Map_ReplacedKeyFromPropertyName</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

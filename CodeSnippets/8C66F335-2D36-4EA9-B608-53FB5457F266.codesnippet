@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_GCD: dispatch_async【ExcuteHandler_On_Main_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> 
+//异步函数+主队列:所有任务都在主线程中执行,不会开线程
+-(void)asyncMain
+{
+    //1.获得主队列
+    dispatch_queue_t queue = dispatch_get_main_queue();
+
+    //2.异步函数
+    dispatch_async(queue, ^{
+        NSLog(@"download1----%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"download2----%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"download3----%@",[NSThread currentThread]);
+    });
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8C66F335-2D36-4EA9-B608-53FB5457F266</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程：按照异步执行主线程队列代码</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_GCD: dispatch_async【ExcuteHandler_On_Main_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

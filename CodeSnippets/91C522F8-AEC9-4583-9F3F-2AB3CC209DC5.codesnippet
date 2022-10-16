@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_Create_UIButton</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+UIButton *&lt;#name#&gt;Btn = [UIButton buttonWithType:UIButtonTypeCustom];
+[&lt;#name#&gt;Btn setBackgroundImage:[UIImage imageNamed:&lt;#imgName#&gt;] forState:UIControlStateNormal];
+[&lt;#name#&gt;Btn setTitle:&lt;#(nullable NSString *)#&gt; forState:UIControlStateNormal];
+[&lt;#name#&gt;Btn setTitleColor:&lt;#(nullable UIColor *)#&gt; forState:UIControlStateNormal];
+
+&lt;#name#&gt;Btn.titleLabel.font = [UIFont systemFontOfSize:12];
+[&lt;#superView#&gt; addSubview:&lt;#name#&gt;Btn];
+    [&lt;#name#&gt;Btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo(&lt;#value#&gt;);
+        make.top.equalTo(&lt;#value#&gt;);
+        make.width.equalTo(&lt;#value#&gt;);
+        make.height.equalTo(&lt;#value#&gt;);
+    }];
+[&lt;#name#&gt;Btn addTarget:self action:@selector(&lt;#funcName#&gt;) forControlEvents:UIControlEventTouchUpInside];
+
+- (void)&lt;#funcName#&gt;:(UIButton*)sendor{
+    NSLog(@"%s",__func__);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>91C522F8-AEC9-4583-9F3F-2AB3CC209DC5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>UI_Initlization</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_Create_UIButton</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

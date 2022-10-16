@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_layer_position_anchorPoint</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /*
+     position 就是View中心点位置,改变view的layer的position相当于 改view的center
+     anchorPoint 锚点
+                相对于position定的 ，默认值(0.5,0.5) 也即是默认与positon重合。我们重新设置锚点后,视图层会作一定的偏移。
+            在改变锚点的同时，position是不会改变的，除非我们重新设置了positon点
+     anchorPoint 的实际值,可以理解为设置 相对于宽高的比例,比如 (0.5，0.5)就是宽的一半 高的一半  的位置。
+     比如将 anchorPoint(0.5，0.5) 重新设置为(0.5，0)则是在Y轴上偏移 (0.5 + (-0.5) = 0) -0.5*h 的距离;
+        需要注意的是,与View的坐标系的方向相反,转换在View的坐标系上则是,向下偏移 0.5*h的距离
+     */ 
+    CALayer *layer = [CALayer layer];
+    layer.bounds = CGRectMake(0, 0, 100, 100);
+    layer.backgroundColor = [UIColor redColor].CGColor;
+    layer.position = self.view.center;
+    layer.anchorPoint = CGPointMake(0.5, 1);
+    [self.view.layer addSublayer:layer];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BB084BDA-6841-4350-B3E0-FB49095F109E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_layer_position_anchorPoint</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_layer_position_anchorPoint</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

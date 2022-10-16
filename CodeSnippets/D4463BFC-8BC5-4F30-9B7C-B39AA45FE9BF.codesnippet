@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_double_for_handler_with_tag</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>outer:for x in 1...4 {
+    inner:for y in 1...4 {
+        if x == 3 {
+            continue outer
+        }
+        if y == 3 {
+            break inner
+        }
+        print("x=\(x),y=\(y)")
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D4463BFC-8BC5-4F30-9B7C-B39AA45FE9BF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>带标签的for循环</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_double_for_handler_with_tag</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

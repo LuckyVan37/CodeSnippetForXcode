@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Foundation_Data_Store_Handler_With_NSUserDefaults</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> typealias excuteHandler = (_ handlerWithDeaults:UserDefaults) -&gt; Void
+    func doSomething() {
+         
+        self.excuteDataWithUserDefaultsBlock { defaults in
+            //1.Cache Obj
+            let object = defaults.object(forKey: "&lt;#defaultKey#&gt;")
+            defaults.setValue(object, forKey: "&lt;#defaultKey#&gt;")
+            defaults.removeObject(forKey: "&lt;#defaultKey#&gt;")
+            //2.Get Obj: NSString、NSArray、NSDictionary、NSData
+            let string  = defaults.string(forKey: "&lt;#defaultKey#&gt;")
+            let array = defaults.array(forKey: "&lt;#defaultKey#&gt;")
+            let dicionary = defaults.dictionary(forKey: "&lt;#defaultKey#&gt;")
+            let data = defaults.data(forKey: "&lt;#defaultKey#&gt;")
+            let stringArray = defaults.stringArray(forKey: "&lt;#defaultKey#&gt;")
+            let url = defaults.url(forKey: "&lt;#defaultKey#&gt;")
+            //3.Get Basic Value:NSInteger、float、double、BOOL
+            let integer = defaults.integer(forKey: "&lt;#defaultKey#&gt;")
+            let floatValue = defaults.float(forKey: "&lt;#defaultKey#&gt;")
+            let doubleValue = defaults.double(forKey: "&lt;#defaultKey#&gt;")
+            let boolValue = defaults.bool(forKey: "&lt;#defaultKey#&gt;")
+            //4. Cache Data:
+            defaults.set(integer, forKey: "&lt;#defaultKey#&gt;")
+            defaults.set(floatValue, forKey: "&lt;#defaultKey#&gt;")
+            defaults.set(doubleValue, forKey: "&lt;#defaultKey#&gt;")
+            defaults.set(boolValue, forKey: "&lt;#defaultKey#&gt;")
+            defaults.set(url, forKey: "&lt;#defaultKey#&gt;")
+            
+            
+            
+        }
+    }
+    
+    func excuteDataWithUserDefaultsBlock(handler: excuteHandler)  {
+        let userDefaluts = UserDefaults.standard
+        handler(userDefaluts)
+        userDefaluts.synchronize()
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>89B02FA7-4C49-4BB4-9930-C4F075FD0C2D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通过UserDefaults进行基本数据存取</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Foundation_Data_Store_Handler_With_NSUserDefaults</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

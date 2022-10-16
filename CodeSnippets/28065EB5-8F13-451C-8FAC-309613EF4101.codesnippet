@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Show_AlertSheet</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UIAlertController *alertCtrl;
+    UIAlertAction *destroyAction;
+    UIAlertAction *otherAction;
+    void (^CallDestroyActionHandler)(UIAlertAction *action) = ^(UIAlertAction *action) {
+       // do destructive stuff here
+        NSLog(@"%s",__func__);
+    };
+    void (^CallOtherActionHandler)(UIAlertAction *action) = ^(UIAlertAction *action) {
+        // do something here
+        NSLog(@"%s",__func__);
+    };
+    alertCtrl = [UIAlertController alertControllerWithTitle:@"Reason"
+                                          message:@"Select the following"
+                                          preferredStyle:UIAlertControllerStyleActionSheet];
+    destroyAction = [UIAlertAction actionWithTitle:@"Remove All Data"
+                                             style:UIAlertActionStyleDestructive
+                                           handler:CallDestroyActionHandler];
+    otherAction = [UIAlertAction actionWithTitle:@"Blah"
+                                           style:UIAlertActionStyleDefault
+                                         handler:CallOtherActionHandler];
+    // note: you can control the order buttons are shown, unlike UIActionSheet
+    [alertCtrl addAction:destroyAction];
+    [alertCtrl addAction:otherAction];
+    
+    [alertCtrl setModalPresentationStyle:UIModalPresentationPopover];
+    UIPopoverPresentationController *popPresenter = [alertCtrl popoverPresentationController];
+    popPresenter.sourceView = sender;
+    popPresenter.sourceRect = sender.bounds;
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>28065EB5-8F13-451C-8FAC-309613EF4101</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>弹上拉菜单窗(iOS8),进行提示操作</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Show_AlertSheet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

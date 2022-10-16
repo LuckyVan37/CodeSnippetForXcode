@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_CALayer_Add3D_Rotation_Animation_With_CATransform3D</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>      
+[UIView animateWithDuration:1 animations:^{
+    //3D旋转
+    &lt;#viewInstance#&gt;.layer.transform = CATransform3DMakeRotation(&lt;#CGFloat angle#&gt;, &lt;#CGFloat x#&gt;, &lt;#CGFloat y#&gt;, &lt;#CGFloat z#&gt;);
+}];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C492B8D4-B679-4A8F-9307-9EC31240102C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>做3d旋转动画 </string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_CALayer_Add3D_Rotation_Animation_With_CATransform3D</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

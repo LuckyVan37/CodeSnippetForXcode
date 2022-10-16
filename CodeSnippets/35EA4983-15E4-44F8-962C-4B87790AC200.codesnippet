@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Thrad_Lock_On_The_Mutiple_Theads_Positions</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  //锁:必须是全局唯一的
+    //1.注意枷锁的位置
+    //2.注意枷锁的前提条件,多线程共享同一块资源
+    //3.注意加锁是需要代价的,需要耗费性能的
+    //4.加锁的结果:线程同步 
+    @synchronized (&lt;#token#&gt;) {
+        &lt;#statements#&gt;
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>35EA4983-15E4-44F8-962C-4B87790AC200</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>多线程场景的线程锁</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Thrad_Lock_On_The_Mutiple_Theads_Positions</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

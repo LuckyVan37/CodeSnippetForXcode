@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UIView_Add_Transition_Animation_From_View1_To_View2</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)performFlip
+{
+    self.delegateView = [[DelegateView alloc] initWithFrame:self.view.frame];
+    [UIView transitionFromView:self.view toView:self.delegateView duration:1 options:UIViewAnimationOptionTransitionFlipFromRight completion:nil];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(performFlipBack)];
+    [self.delegateView addGestureRecognizer:tap];
+}
+
+- (void)performFlipBack
+{
+    [UIView transitionFromView:self.delegateView toView:self.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight completion:nil];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A0D0FC6D-2E60-4A99-A90F-BFFB258BCE13</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>进行页面切换的转场动画</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UIView_Add_Transition_Animation_From_View1_To_View2</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UITableView_add_business‘ need_codes_for__section_header_and_footer_Imp_callback_function‘ need_codes_for__section_header_and_footer_Imp_callback_function</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  告诉tableView每一组的头部标题
+ */
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return @"&lt;#desc#&gt;";
+    } else {
+        return @"&lt;#desc#&gt;";
+    }
+}
+
+/**
+ *  告诉tableView每一组的尾部标题
+ */
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return @"&lt;#desc#&gt;";
+    } else {
+        return @"&lt;#desc#&gt;";
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9F617422-AC75-4D6B-9B30-7C80CC232620</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>实现UITableView的section头部和尾部的回调处理</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UITableView_add_business‘ need_codes_for__section_header_and_footer_Imp_callback_function</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

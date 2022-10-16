@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift_guard_judgement</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//当使用guard语句进行可选项绑定时，绑定的常量(let)、变量(var)也能在外层作用域中使用
+guard  let &lt;#常量名称#&gt; = &lt;#可选类型#&gt; else{//为true时,提前返回
+    //业务代码
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>31898948-78F9-48C8-8DD5-A015BE7935B9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>guard栅栏函数</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>swift_guard_judgement</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

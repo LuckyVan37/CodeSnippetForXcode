@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Create_SingleView_With_Rect_bgColor</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+view.backgroundColor = UIColor.red</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>54D50685-B933-4F1F-82BA-9C9AB5A27A62</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Swift_Create_SingleView_With_Rect_bgColor</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Create_SingleView_With_Rect_bgColor</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

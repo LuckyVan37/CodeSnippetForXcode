@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Foundation_Data_Store_Handler_With_NSUserDefaults</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)dosomething{
+    [self excuteDataWithUserDefaultsBlock:^(NSUserDefaults *defaults) {
+        //1.Cache Obj
+        id object = [defaults objectForKey:@"&lt;#defaultKey#&gt;"];
+        [defaults setObject:object forKey:@"&lt;#defaultKey#&gt;"];
+        [defaults removeObjectForKey:@"&lt;#defaultKey#&gt;"];
+        
+        //2.Get Obj: NSString、NSArray、NSDictionary、NSData
+        NSString*string = [defaults stringForKey:@"&lt;#defaultKey#&gt;"];
+        NSArray*array = [defaults arrayForKey:@"&lt;#defaultKey#&gt;"];
+        NSDictionary*dicionary = [defaults dictionaryForKey:@"&lt;#defaultKey#&gt;"];
+        NSData*data = [defaults dataForKey:@"&lt;#defaultKey#&gt;"];
+        NSArray&lt;NSString *&gt; *stringArray = [defaults stringArrayForKey:@"&lt;#defaultKey#&gt;"];
+        NSURL  *url = [defaults URLForKey:@"&lt;#defaultKey#&gt;"];
+        
+        
+        //3.Get Basic Value:NSInteger、float、double、BOOL
+        NSInteger integer = [defaults integerForKey:@"&lt;#defaultKey#&gt;"];
+        float floatValue = [defaults floatForKey:@"&lt;#defaultKey#&gt;"];
+        double doubleValue = [defaults doubleForKey:@"&lt;#defaultKey#&gt;"];
+        BOOL boolValue = [defaults boolForKey:@"&lt;#defaultKey#&gt;"];
+         
+        //4. Cache Data:
+        [defaults setInteger:integer forKey:@"&lt;#defaultKey#&gt;"];
+        [defaults setFloat:floatValue forKey:@"&lt;#defaultKey#&gt;"];
+        [defaults setDouble:doubleValue forKey:@"&lt;#defaultKey#&gt;"];
+        [defaults setBool:boolValue forKey:@"&lt;#defaultKey#&gt;"];
+        [defaults setURL:url forKey:@"&lt;#defaultKey#&gt;"];
+    }];
+}
+- (void)excuteDataWithUserDefaultsBlock:(void(^)(NSUserDefaults *defaults))excuteHandlerBlock{
+    NSUserDefaults *userDefaluts = [NSUserDefaults standardUserDefaults];
+    !excuteHandlerBlock?:excuteHandlerBlock(userDefaluts);
+    [userDefaluts synchronize];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0C53A258-E6C0-4B42-AD7F-E25B68B0B047</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通过NSUserDefaults进行基本数据存取</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Foundation_Data_Store_Handler_With_NSUserDefaults</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

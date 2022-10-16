@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_for_handler_with_where_condition</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>var numbers = [10, 20, -10, -20, 30, -30]
+var sum = 0
+for num in numbers where num &gt; 0 {
+     sum += num
+}
+print(sum)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7173480D-FCD0-475F-A5B2-51E6B7690628</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>携带判断条件的for</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_for_handler_with_where_condition</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

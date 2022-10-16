@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Str_Transformation_Handler</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static void ExcuteStrTransformQueue(void){
+    NSString *str = @"abc";
+    // 1.将字符串转换为大写
+   
+    NSString *newStr = [str uppercaseString];
+    NSLog(@"%@", newStr);
+ 
+    // 2.将字符串转换为小写
+  
+    NSString *newStr2 = [newStr lowercaseString];
+    NSLog(@"%@", newStr2);
+    
+    // 3.将字符串的首字符转换为大写
+  
+    NSString *newStr3 = [str capitalizedString];
+    NSLog(@"%@", newStr3);
+   
+    
+    // 4.字符串与基本数据类型的转换
+    NSString *str1 = @"110";
+    NSString *str2 = @"120";
+//    str1 + str2; // 错误
+    int value1 = [str1 intValue];
+    int value2 = [str2 intValue];
+    NSLog(@"sum = %i", value1 + value2);
+    
+    // 注意: 如果不是int,double,float,bool,integer,longlong这些类型就不要乱用
+    NSString *str3 = @"abc";
+    int value3 = [str3 intValue];
+    NSLog(@"value3 = %i", value3);
+ 
+    
+    // 5.C语言字符串和OC字符串之间的转换
+ 
+    char *cStr5 = "LuckyVan123";
+    NSString *str4 = [NSString stringWithUTF8String:cStr5];
+    NSLog(@"str = %@", str4);
+    
+    NSString *newStr4 = @"LuckyVan234";
+    const char *cStr2 = [newStr4 UTF8String];
+    NSLog(@"cStr2 = %s", cStr2);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A276643E-51B7-4EAA-890E-7490C31F5868</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Str_Transformation_Handler</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Str_Transformation_Handler</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_create_PickerView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface &lt;#VcName#&gt; ()&lt;UIPickerViewDataSource,UIPickerViewDelegate&gt;
+
+@property (weak, nonatomic)   UIPickerView *pickView;
+
+@end
+- (void)createPicker{
+    UIPickerView *pkv = [[UIPickerView alloc]initWithFrame:CGRectZero];
+    pkv.delegate = self;
+    pkv.dataSource = self;
+    self.pickView = pkv;
+    [self.view addSubview:pkv];
+}
+//总共有多少列
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 2;
+}
+//第一列有有多少行
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return 5;
+}
+//设置每一行的宽度
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
+    return 200;
+}
+//每一行的高度
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 50;
+}
+//每一行展示什么内容
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return @"luckyVan";
+}
+//展示带有属性的内容(文字的颜色,大小...)
+//- (nullable NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component{
+//
+//}
+
+//每行展示什么样的视图
+//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view{
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+//    return btn;
+//} 
+//选中某一行的时候调用
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    NSLog(@"component===%ld    row===%ld",component,row);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3A2F5990-A396-4EE7-8391-F1BF627A157E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_create_PickerView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_create_PickerView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

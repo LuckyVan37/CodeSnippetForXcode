@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Create_Global_Var_For_A_Class_With_"!"</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>var &lt;#currVarNameDesc#&gt;:&lt;#currVarClassDesc#&gt;!
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B7E7FB12-A785-457F-AF3F-300CF5AA4D62</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>在一个类中创建强制解包的全局变量</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Create_Global_Var_For_A_Class_With_"!"</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

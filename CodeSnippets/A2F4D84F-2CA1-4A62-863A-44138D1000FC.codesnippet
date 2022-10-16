@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_create_reset_self_View_by_loadView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+//loadView作用,用来创建控制器的View.
+//什么时候调用:当控制器的View,第一次使用的时候调用.
+
+//loadView底层原理:
+//1.先判断当前控制器是不是从storyBoard当中加载的,如果是从storyBoard加载的控制器.那么它就会从storyBoard当中加载的控制器的View,设置当前控制器的view.
+//2.当前控制器是不是从xib当中加载的,如果是从xib当中加载的话,把xib当中指定的View,设置为当前控制器的View.
+//3.如果也不是从xib加载的,它会创建空白的view.
+
+//一但重写了loadView方法,就说明要自己定义View.
+//-(void)loadView{
+//    
+//}
+
+//一般使用的场景:当控制器的View一显示时,就是一张图片,或者WKWebView.
+-(void)loadView{ 
+//    //如果一个控件不能够接收事件,那么它里面子控件也是能不能够接收事件
+//    UIImageView *imageV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"火影"]];
+//
+//    imageV.userInteractionEnabled = YES;
+//    self.view = imageV;
+    WKWebView *webView = [[WKWebView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
+    self.view = webView;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A2F4D84F-2CA1-4A62-863A-44138D1000FC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_create_reset_self_View_by_loadView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_create_reset_self_View_by_loadView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

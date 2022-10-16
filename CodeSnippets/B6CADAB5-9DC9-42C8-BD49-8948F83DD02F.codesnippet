@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_UISegmentedControl</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //添加头部SegMent
+    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:@[@"篮球",@"足球"]];
+    
+    //设置背景图片
+    [segment setBackgroundImage:[UIImage imageNamed:@"CPArenaSegmentBG"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    //设置选中时的背景图片
+    [segment setBackgroundImage:[UIImage imageNamed:@"CPArenaSegmentSelectedBG"] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    
+    //设置主题颜色
+    [segment setTintColor:[UIColor colorWithRed:0 green:142/ 255.0 blue:143 / 255.0 alpha:1]];
+    
+    //设置选中时的文字颜色.
+    [segment setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateSelected];
+    //设置默认第一个选中.
+    [segment setSelectedSegmentIndex:0]; 
+    self.navigationItem.titleView = segment;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B6CADAB5-9DC9-42C8-BD49-8948F83DD02F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>添加选项卡控件</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_UISegmentedControl</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

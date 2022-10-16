@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_SortedArrayData_By_Comparison_Result</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static void ExcuteSortedArrayQueue(void){
+    NSArray *data = @[@1,@5,@3,@2,@10,@33,@25];
+    NSLog(@"dataList:%@",data);
+    //NSOrderedAscending 升序
+    NSArray *dataList2 = [data sortedArrayWithOptions:NSSortStable usingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber * obj2) {
+        NSInteger value1 = [obj1 integerValue];
+        NSInteger value2 = [obj2 integerValue];
+        return value1&gt;value2;
+    }];
+    NSLog(@"dataList:%@",dataList2);
+    //NSOrderedDescending 降序
+    NSArray *dataList3 = [data sortedArrayWithOptions:NSSortStable usingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber * obj2) {
+        NSInteger value1 = [obj1 integerValue];
+        NSInteger value2 = [obj2 integerValue];
+        return value1&lt;value2;
+    }];
+    NSLog(@"dataList:%@",dataList3); 
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>752384A8-C84A-4405-ACAD-2FE907D0FC2B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_SortedArrayData_By_Comparison_Result</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_SortedArrayData_By_Comparison_Result</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

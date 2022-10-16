@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Create_MutableArray_Var_With_AnyType_Item</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        var itms:[Any] = ["选项1","选项2"]
+        itms.append(UIImage(named: "item03")!)
+        //或者
+        var items=["选项1","选项2"] as [AnyObject]
+        items.append(UIImage(named: "item03")!)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>97D8525B-3CBF-4E63-9E5D-65C928A76CFB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>创建可存储任意对象类型的数组变量</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Create_MutableArray_Var_With_AnyType_Item</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

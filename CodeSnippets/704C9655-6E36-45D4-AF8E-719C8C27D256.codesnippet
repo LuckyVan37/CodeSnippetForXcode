@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Add_UI_WKWebview_For_View_Loading_Remote_Html</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func add_wk_webview() {
+        let ui_wkwebView = WKWebView(frame: self.view.bounds)
+        self.view.addSubview(ui_wkwebView)
+        if let url = URL(string: "https://www.baidu.com") {
+            let url_request = URLRequest(url: url)
+            ui_wkwebView.load(url_request)
+        }
+        wk_webview = ui_wkwebView
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>704C9655-6E36-45D4-AF8E-719C8C27D256</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给View添加WKWebView_加载远程H5</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Add_UI_WKWebview_For_View_Loading_Remote_Html</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

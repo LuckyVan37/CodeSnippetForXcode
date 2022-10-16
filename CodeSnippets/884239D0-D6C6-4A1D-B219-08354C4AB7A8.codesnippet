@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_IF_Have_CodeFile</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#if __has_include(&lt;#&lt;HPPaaS_MobileFramework/HPMobileFramework.h&gt;#&gt;)
+    
+#else
+
+#endif</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>884239D0-D6C6-4A1D-B219-08354C4AB7A8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>根据判断是否有该源码文件来决定是否执行</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_IF_Have_CodeFile</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

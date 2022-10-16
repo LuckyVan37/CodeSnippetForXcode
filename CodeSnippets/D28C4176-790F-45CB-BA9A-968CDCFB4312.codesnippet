@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_NSOperation_ExcuteHandler_With_OtherOperationQueue_UpdateUI_With_MainQueue</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //1.异步线程执行
+    [[[NSOperationQueue alloc]init]addOperationWithBlock:^{
+       
+        
+        //2.主线程更新
+        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                     
+        }];
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D28C4176-790F-45CB-BA9A-968CDCFB4312</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_NSOperation_ExcuteHandler_With_OtherOperationQueue_UpdateUI_With_MainQueue</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_NSOperation_ExcuteHandler_With_OtherOperationQueue_UpdateUI_With_MainQueue</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

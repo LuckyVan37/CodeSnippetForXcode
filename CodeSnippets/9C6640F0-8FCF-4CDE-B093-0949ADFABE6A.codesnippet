@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UIViewController_bring_ChildViewController_to_the_front_of_Window_At_Selected_steper_Index</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+#import "ViewController.h"
+
+@interface &lt;#ViewControllerClassName#&gt; ()
+@property (nonatomic, weak) UIView *toolView;
+@property (nonatomic, strong) UIViewController *selectedViewController;
+@property (nonatomic, strong) ViewController *controller1;
+@property (nonatomic, strong) ViewController *controller2;
+@property (nonatomic, strong) ViewController *controller3;
+@property (nonatomic, strong) ViewController *controller4;
+@end
+
+@implementation &lt;#ViewControllerClassName#&gt;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self initTabBarItem];
+
+    self.selectedViewController = self.controller1;
+    [self replaceController:self.selectedViewController newController:self.controller1];
+}
+
+//懒加载
+-(ViewController *)controller1{
+    if (!_controller1) {
+        _controller1 = [[ViewController alloc] initWithIndex:0];
+        [_controller1.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
+        //需要将第一个controller添加进去。否则切换选项卡时回崩溃
+        [self addChildViewController:_controller1];
+        [self.view addSubview:_controller1.view];
+    }
+    return _controller1;
+}
+-(ViewController *)controller2{
+    if (!_controller2) {
+        _controller2 = [[ViewController alloc] initWithIndex:1];
+        [_controller2.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
+    }
+    return _controller2;
+}
+-(ViewController *)controller3{
+    if (!_controller3) {
+        _controller3 = [[ViewController alloc] initWithIndex:2];
+        [_controller3.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
+    }
+    return _controller3;
+}
+-(ViewController *)controller4{
+    if (!_controller4) {
+        _controller4 = [[ViewController alloc] initWithIndex:3];
+        [_controller4.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
+    }
+    return _controller4;
+}
+
+//初始化底部tabbarItem
+-(void)initTabBarItem{
+    NSArray *itemDicArray = @[@{@"title":@"首页",
+                                @"normal_icon":@"nav_home.png",
+                                @"pre_icon":@"nav_home_pre.png"},
+                              @{@"title":@"技巧",
+                                @"normal_icon":@"nav_yyjiqiao.png",
+                                @"pre_icon":@"nav_yyjiqiao_pre.png"},
+                              @{@"title":@"资讯",
+                                @"normal_icon":@"nav_itzixun.png",
+                                @"pre_icon":@"nav_itzixun_pre.png"},
+                              @{@"title":@"更多",
+                                @"normal_icon":@"nav_more.png",
+                                @"pre_icon":@"nav_more_pre.png"},];
+    
+    float toolHeight = 64.0;
+    UIView *toolView = [[UIView alloc] init];
+    [self.view addSubview:toolView];
+    self.toolView = toolView;
+    [toolView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(@0);
+        make.height.mas_equalTo(@(toolHeight));
+    }];
+    
+    for (int i = 0; i &lt; itemDicArray.count; i++) {
+        NSDictionary *itemDic = itemDicArray[i];
+        TabbarButton *tabbarButton = [[TabbarButton alloc] initWithDic:itemDic];
+        tabbarButton.tag = 100+i;
+        [toolView addSubview:tabbarButton];
+        [tabbarButton addTarget:self action:@selector(selectedItem:) forControlEvents:UIControlEventTouchUpInside];
+        tabbarButton.frame = CGRectMake(SCREEN_WIDTH/4*i, 0, SCREEN_WIDTH/4, toolHeight);
+        if (i == 0) {
+            tabbarButton.selected = YES;
+        }
+    }
+}
+
+//选中选项卡
+-(void)selectedItem:(TabbarButton *)sender{
+    if (sender.selected) {
+        NSLog(@"重复选中");
+        return;
+    }
+    NSLog(@"选中选项卡---%ld", sender.tag - 100);
+    for (NSInteger i = 0; i &lt; 4; i++) {
+        TabbarButton *tabbarButton = (TabbarButton *)[self.toolView viewWithTag:100+i];
+        
+        if (tabbarButton.tag == sender.tag) {
+            //选中的Item
+            tabbarButton.selected = YES;
+            [self selectedControlerWithIndex:i];
+        }else{
+            //上次被选中的Item
+            if (tabbarButton.selected == YES) {
+                tabbarButton.selected = NO;
+            }
+            
+        }
+    }
+    
+}
+
+-(void)selectedControlerWithIndex:(NSInteger)index{
+    UIViewController *newController = nil;
+    switch (index) {
+        case 0:
+            newController = self.controller1;
+            break;
+        case 1:
+            newController = self.controller2;
+            break;
+        case 2:
+            newController = self.controller3;
+            break;
+        case 3:
+            newController = self.controller4;
+            break;
+            
+        default:
+            break;
+    }
+    [self replaceController:self.selectedViewController newController:newController];
+}
+
+//切换选项卡
+- (void)replaceController:(UIViewController *)oldController newController:(UIViewController *)newController{
+    if (oldController == newController) {
+        return;
+    }
+    
+    [self addChildViewController:newController];
+    __weak typeof(self) weakSelf = self;
+    [self transitionFromViewController:oldController toViewController:newController duration:0.1 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
+        
+        if (finished) {
+            [oldController willMoveToParentViewController:weakSelf];
+            [oldController removeFromParentViewController];
+            
+            [newController didMoveToParentViewController:weakSelf];
+            _selectedViewController = newController;
+            
+        }else{
+            _selectedViewController = oldController;
+        }
+    }];
+}
+
+
+
+ 
+
+
+
+
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9C6640F0-8FCF-4CDE-B093-0949ADFABE6A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>根据选项卡选中的下标来替换选中的子控制器到窗口最前</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UIViewController_bring_ChildViewController_to_the_front_of_Window_At_Selected_steper_Index</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

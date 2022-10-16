@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UITableView_add_tableView_as_mainView_for_Controller_and_setup_delegate_datasource_config</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+#import &lt;MJRefresh/MJRefresh.h&gt;
+
+@interface &lt;#ViewControllerClassName#&gt; ()&lt;UITableViewDelegate,UITableViewDataSource&gt;
+
+@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) NSMutableDictionary* requestParams;
+@property (assign, nonatomic) NSInteger pageCount;
+@property (strong, nonatomic) NSMutableArray *items;
+@property (strong, nonatomic) UIView *header;
+
+@end
+
+@implementation &lt;#ViewControllerClassName#&gt;
+
+- (void)viewDidLoad{
+    
+    [super viewDidLoad];
+    
+    [self setupUI_UITableView_WithRect:self.view.bounds];
+    
+}
+- (void)setupUI_UITableView_WithRect:(CGRect)frame{
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
+    
+  
+    self.tableView.sectionIndexColor = [UIColor redColor];  // 1.设置索引条文字颜色
+    
+    
+    self.tableView.sectionIndexBackgroundColor = [UIColor orangeColor];// 2.设置索引条背景色
+    
+    [self.view addSubview:self.tableView];
+    
+    __weak typeof(self)  weakSelf = self;
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{// 3.设置下拉刷新
+        weakSelf.pageCount = 0;
+        weakSelf.requestParams = nil;
+        
+        NSMutableDictionary *requestParams = [NSMutableDictionary dictionary];
+        requestParams[@"page"] = @(weakSelf.pageCount);
+        requestParams[@"size"] = @(10);
+        weakSelf.requestParams = [requestParams mutableCopy];
+        
+        [weakSelf loadDataWithParams:weakSelf.requestParams withComplection:^{
+            [weakSelf.tableView.mj_header endRefreshing];
+            [weakSelf.tableView reloadData];
+        }];
+    }];
+    
+    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{// 4.设置上拉刷新
+        
+        weakSelf.pageCount += 1;
+        weakSelf.requestParams[@"page"] = @(weakSelf.pageCount);
+        
+        [weakSelf loadDataWithParams:weakSelf.requestParams withComplection:^{
+            //添加 失败 页码 -1 逻辑
+            [weakSelf.tableView.mj_footer endRefreshing];
+            [weakSelf.tableView reloadData];
+        }];
+    }];
+}
+
+- (void)loadDataWithParams:(NSDictionary*)params withComplection:(void(^)(void))complectionBlock{
+    //添加网络处理接口
+    
+}
+#pragma UITableView_delegate_datasource
+// Display customization :Read Detail From UITableViewDelegate
+
+// Variable height support
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
+    
+    switch (indexPath.section) {
+        case 0:
+            cell.textLabel.text = @"0";
+            break;
+        case 1:
+            cell.textLabel.text = @"1";
+            break;
+        default:
+            cell.textLabel.text = @"Unknown";
+    }
+    
+    UIImage *flowerImage = [UIImage imageNamed:
+                            [NSString stringWithFormat:@"%@%@",cell.textLabel.text,@".png"]];
+    
+    cell.imageView.image=flowerImage;
+    
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+}
+ 
+- (NSArray&lt;NSString *&gt; *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    // 抽取self.carGroups数组中每一个元素(XMGCarGroup对象)的title属性的值,放在新的数组中返回
+    return [self.items valueForKeyPath:@"&lt;#keyPath#&gt;"];
+}
+
+/**
+ *  告诉tableView每一组的头部标题
+ */
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return @"&lt;#desc#&gt;";
+    } else {
+        return @"&lt;#desc#&gt;";
+    }
+}
+
+/**
+ *  告诉tableView每一组的尾部标题
+ */
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return @"&lt;#desc#&gt;";
+    } else {
+        return @"&lt;#desc#&gt;";
+    }
+}
+#pragma UITableView_Lazyloading
+
+-(UITableView*)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.tableHeaderView = self.header;
+        _tableView.tableFooterView = [[UIView alloc]init];
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [_tableView setBackgroundColor:[UIColor clearColor]];
+        _tableView.estimatedRowHeight = UITableViewAutomaticDimension;
+        _tableView.showsVerticalScrollIndicator = NO;
+        _tableView.showsHorizontalScrollIndicator = NO;
+        _tableView.delegate  = self;
+        _tableView.dataSource = self;
+    }
+    return _tableView;
+}
+
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BECD2B8C-30D1-4D03-B2F8-09ADE3217431</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给控制器添加表单视图作为主视图,且实现相关的回调入口</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UITableView_add_tableView_as_mainView_for_Controller_and_setup_delegate_datasource_config</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

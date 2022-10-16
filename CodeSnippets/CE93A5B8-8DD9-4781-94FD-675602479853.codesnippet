@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_GCD:kDISPATCH_GLOBAL_QUEUE_DEFAULT</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //Desc:
+    kGCDHandlerBlock &lt;#CommonGCD#&gt;Block = ^{
+    
+    };
+    kDISPATCH_GLOBAL_QUEUE_DEFAULT(&lt;#kGCDHandlerBlockInstance_GlobalQueueBlock#&gt;);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CE93A5B8-8DD9-4781-94FD-675602479853</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD：宏生成,全局并发队列异步执行Block</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_GCD:kDISPATCH_GLOBAL_QUEUE_DEFAULT</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Show_Alert_Banner</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)add_ui_alertController_alertView{
+    
+ 
+    
+    UIAlertController *alertCtrl;
+    UIAlertAction *destructiveAction;
+    UIAlertAction *defaultAction;
+    UIAlertAction *cancelAction;
+    UIView *sender = nil;
+    
+ 
+    __weak typeof(self)  weakSelf = self;
+    void (^CallDestructiveActionHandler)(UIAlertAction *action) = ^(UIAlertAction *action) {
+        // do destructive stuff here
+        NSLog(@"destructive");
+    };
+    void (^CallDefaultActionHandler)(UIAlertAction *action) = ^(UIAlertAction *action) {
+        NSLog(@"default");
+        //从广播中心移除该条通知
+        [[NSNotificationCenter defaultCenter] removeObserver:weakSelf name:UITextFieldTextDidChangeNotification object:nil];
+    };
+    void (^CallCanelActionHandler)(UIAlertAction *action) = ^(UIAlertAction *action) {
+        NSLog(@"cancel");
+        //从广播中心移除该条通知
+        [[NSNotificationCenter defaultCenter] removeObserver:weakSelf name:UITextFieldTextDidChangeNotification object:nil];
+    };
+      
+    alertCtrl =  [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleAlert];
+     __weak UIAlertController* weakAlertCtrl = alertCtrl;
+   /* 给 UIAlertController 添加动作按钮 */
+    //警告按钮
+    destructiveAction = [UIAlertAction actionWithTitle:@"destructive" style:UIAlertActionStyleDestructive handler:CallDestructiveActionHandler];
+   //默认按钮
+    defaultAction = [UIAlertAction actionWithTitle:@"default" style:UIAlertActionStyleDefault handler:CallDefaultActionHandler];
+    //取消按钮
+    cancelAction = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:CallCanelActionHandler];
+ 
+    cancelAction.enabled = YES;
+    defaultAction.enabled = NO;
+   
+    //添加 只添加取消和默认两个按钮，效果和三个全部添加不同
+  
+    [alertCtrl addAction:cancelAction];
+    [alertCtrl addAction:defaultAction];
+    [alertCtrl addAction:destructiveAction];
+
+    
+    
+   
+   /* 给UIAlertController 添加输入框 */
+   //添加账号输入框
+    [alertCtrl addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入账号";
+        textField.secureTextEntry = NO;
+       //增加一条广播
+        [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+                 NSLog(@"%s",__func__);
+                //textFields 和 actions 是数组
+                UITextField *accountTextField = weakAlertCtrl.textFields[0];
+//               UIAlertAction *cancelAction = weakAlertCtrl.actions[0];
+                UIAlertAction *defaultAction = weakAlertCtrl.actions[1];
+                defaultAction.enabled = accountTextField.text.length &gt; 2;
+                NSLog(@"actions:%@",weakAlertCtrl.actions);
+        }];
+    }];
+    //添加密码输入框
+
+    [alertCtrl addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+       textField.placeholder = @"请输入密码";
+       textField.secureTextEntry = YES;
+    }];
+   
+    
+    if (sender) {
+         [alertCtrl setModalPresentationStyle:UIModalPresentationPopover];
+         UIPopoverPresentationController *popPresenter = [alertCtrl popoverPresentationController];
+         popPresenter.sourceView = sender;
+         popPresenter.sourceRect = sender.bounds;
+    }
+    [self presentViewController:alertCtrl animated:YES completion:nil];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>96EDEE83-DC49-4DB4-92E1-4011E5A91043</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>弹上拉菜单窗(iOS8),进行提示操作</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Show_Alert_Banner</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Create_Monitor_For_NotificationCenter_Msg_Post_With_NotifyName_For_BusinessScene</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> 
+ extension Notification.Name{
+    static let &lt;#MyNoticeServiceName#&gt; = Notification.Name(rawValue: "&lt;#descpForBussinessSence#&gt;")
+ }
+        let observer = NotificationCenter.default.addObserver(forName: Notification.Name.&lt;#MyNoticeServiceName#&gt;, object: nil, queue: nil, using: { note in
+            
+           let object = note.object
+           let notificationName = note.name
+           let userInfo = note.userInfo
+            print("Notify Name:\(notificationName)")
+            print("Notify Object:\(String(describing: object))")
+            print("Notify Params(userInfo):\(userInfo ?? ["key":"value"])")
+            
+        })
+        
+        let userInfo :[String:AnyObject]  = Dictionary()
+        NotificationCenter.default.post(name: Notification.Name.&lt;#MyNoticeServiceName#&gt;, object: nil, userInfo: userInfo)
+        NotificationCenter.default.removeObserver(observer)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EE86B078-27D9-4201-81D7-4C7EB05172B1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给业务场景的事件响应链,创建广播监听和监听回调处理</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Create_Monitor_For_NotificationCenter_Msg_Post_With_NotifyName_For_BusinessScene</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

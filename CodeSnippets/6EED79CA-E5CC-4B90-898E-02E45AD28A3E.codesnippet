@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Str_Replace_With_CharacterSet_Or_Str</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static void ExcuteStrReplaceQueue(void)
+{
+    // 需求: 将&amp;符号替换为/
+    NSString *str1 = @"http:&amp;&amp;www.520it.com&amp;img&amp;lnj.gif";
+    
+    // OccurrencesOfString: 要替换谁
+    // withString: 用谁替换
+    NSString *newStr1 = [str1 stringByReplacingOccurrencesOfString:@"&amp;" withString:@"/"];
+    NSLog(@"newStr = %@", newStr1);
+ 
+    
+  
+    // 1.去除空格  2.将&amp;替换为/
+    NSString *str2 = @"   http:   &amp;&amp;www.   520it.com   &amp;img&amp;lnj.gif   ";
+    // 1.去除空格
+    NSString *newStr2 = [str2 stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"newStr = |%@|", newStr2);
+    NSString *newStr3 = [newStr2 stringByReplacingOccurrencesOfString:@"&amp;" withString:@"/"];
+    NSLog(@"newStr2 = |%@|", newStr3);
+    // 3.替换首尾
+    
+//    NSString *str = @"   http:&amp;&amp;www.520it.com&amp;img&amp;lnj.gif   ";
+    NSString *str3 = @"HTTP://www.520it.com/img/LNJ.GIF";
+
+    NSCharacterSet *set = [NSCharacterSet uppercaseLetterCharacterSet];
+    NSString *newStr4 = [str3 stringByTrimmingCharactersInSet:set];
+    NSLog(@"newStr = |%@|", newStr4);
+    
+    //4.去除首尾空格
+    NSString *str4 = @"    HTTP    ://www.520it.com/img/LNJ.GIF   ";
+
+    NSCharacterSet *set2 = [NSCharacterSet whitespaceCharacterSet];
+    NSString *newStr5 = [str4 stringByTrimmingCharactersInSet:set2];
+    NSLog(@"newStr = |%@|", newStr5);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6EED79CA-E5CC-4B90-898E-02E45AD28A3E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Str_Replace_With_CharacterSet_Or_Str</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Str_Replace_With_CharacterSet_Or_Str</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

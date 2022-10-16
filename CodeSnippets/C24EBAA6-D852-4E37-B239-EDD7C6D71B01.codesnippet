@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_OC_Object_Transform_To_JsonString</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    id object = &lt;#theObjWhichOughtToTransform#&gt;;
+    NSError *transformToJsonDataErr;
+    NSData *data =  [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingFragmentsAllowed error:&amp;&amp;transformToJsonDataErr];
+    NSString *dataJsonString = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C24EBAA6-D852-4E37-B239-EDD7C6D71B01</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_OC_Object_Transform_To_JsonString</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_OC_Object_Transform_To_JsonString</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

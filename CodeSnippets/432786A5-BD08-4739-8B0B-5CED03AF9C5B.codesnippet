@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_UISegmentedControl</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)addMySegmentedControl{
+    UIImage *img = [[UIImage imageNamed:@"pic"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    NSArray *items = @[@"First",@"Second",img];
+    UISegmentedControl* segmentedControl = [[UISegmentedControl alloc]initWithItems:items];
+    /*或者
+     [mySegmentedControl insertSegmentWithTitle:@"First" atIndex:0 animated:YES];
+     [mySegmentedControl insertSegmentWithTitle:@"Second" atIndex:2 animated:YES];
+     [mySegmentedControl insertSegmentWithImage:img  atIndex:3 animated:YES];
+     */
+    
+    segmentedControl.momentary = YES;
+    //[mySegmentedControl removeSegmentAtIndex:0 animated:YES];//删除一个片段
+    //[mySegmentedControl removeAllSegments];//删除所有片段
+    
+    UIColor *myTint = [[ UIColor alloc]initWithRed:0.66 green:1.0 blue:0.77 alpha:1.0];
+    segmentedControl.tintColor = myTint;
+    
+    [segmentedControl setTitle:@"ZERO" forSegmentAtIndex:0];//设置标题
+    NSString* myTitle = [segmentedControl titleForSegmentAtIndex:1];//读取标题
+    NSLog(@"myTitle:%@",myTitle);
+    
+    //[mySegmentedControl setImage:[UIImage imageNamed:@"pic"] forSegmentAtIndex:1];//设置
+    UIImage* myImage = [segmentedControl imageForSegmentAtIndex:2];//读取
+    NSLog(@"myImage:%@",myImage);
+    [segmentedControl setWidth:100 forSegmentAtIndex:0];//设置Item的宽度
+    
+    [segmentedControl addTarget:self action:@selector(selected:) forControlEvents:UIControlEventValueChanged];
+    
+    //[self.view addSubview:mySegmentedControl];//添加到父视图
+    
+    self.navigationItem.titleView = segmentedControl;//添加到导航栏
+    
+}
+- (void)selected:(id)sender{
+    UISegmentedControl* control = (UISegmentedControl*)sender;
+    NSLog(@"title:%@",[control titleForSegmentAtIndex:control.selectedSegmentIndex]);
+    NSLog(@"Image:%@",[control imageForSegmentAtIndex:control.selectedSegmentIndex]);
+    switch (control.selectedSegmentIndex) {
+        case 0:
+            //
+            break;
+        case 1:
+            //
+            break;
+        case 2:
+            //
+            break;
+            
+        default:
+            break;
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>432786A5-BD08-4739-8B0B-5CED03AF9C5B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>添加选项卡控件</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_UISegmentedControl</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

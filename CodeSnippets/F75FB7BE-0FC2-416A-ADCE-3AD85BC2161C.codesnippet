@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_GCD: dispatch_barrier_async【ExcuteHandler_On_Global_Queue】 </string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+
+
+//0.获得全局并发队列
+    //栅栏函数不能使用全局并发队列
+    //dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t queue = dispatch_queue_create("download", DISPATCH_QUEUE_CONCURRENT);
+    
+    //1.异步函数
+    dispatch_async(queue, ^{
+       
+        for (NSInteger i = 0; i&lt;100; i++) {
+            NSLog(@"download1-%zd-%@",i,[NSThread currentThread]);
+        }
+        
+    });
+    
+    dispatch_async(queue, ^{
+        
+        for (NSInteger i = 0; i&lt;100; i++) {
+            NSLog(@"download2-%zd-%@",i,[NSThread currentThread]);
+        }
+    });
+    //栅栏函数,栅栏函数前面的线程操作执行完 才可以 执行后面的线程代码
+    dispatch_barrier_async(queue, ^{
+       
+        NSLog(@"+++++++++++++++++++++++++++++");
+    });
+    
+    dispatch_async(queue, ^{
+        
+        for (NSInteger i = 0; i&lt;100; i++) {
+            NSLog(@"download3-%zd-%@",i,[NSThread currentThread]);
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        
+        for (NSInteger i = 0; i&lt;100; i++) {
+            NSLog(@"download4-%zd-%@",i,[NSThread currentThread]);
+        }
+    });</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F75FB7BE-0FC2-416A-ADCE-3AD85BC2161C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程：通过gcd栅栏函数,按顺序执行代码块操作</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_GCD: dispatch_barrier_async【ExcuteHandler_On_Global_Queue】 </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

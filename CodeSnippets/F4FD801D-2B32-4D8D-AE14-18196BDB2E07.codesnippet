@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Struct_Value_Transformation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    typedef struct{
+        int age;
+        char *name;
+        double height;
+    }Person;
+    
+    Person p = {25, "luckyVan", 1.75};
+    // valueWithBytes: 接收一个指针, 需要传递需要包装的结构体的变量的地址
+    // objCType: 需要传递需要包装的数据类型
+    NSValue *pValue = [NSValue valueWithBytes:&amp;p objCType:@encode(Person)];
+    NSArray *arr = @[pValue];
+    NSLog(@"%@", arr);
+    // 从NSValue中取出自定义的结构体变量
+    Person res;
+    [pValue getValue:&amp;res];
+    NSLog(@"age = %i, name = %s, height = %f", res.age, res.name, res.height);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F4FD801D-2B32-4D8D-AE14-18196BDB2E07</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Struct_Value_Transformation</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Struct_Value_Transformation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

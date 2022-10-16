@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_API_CreateFunc_With_Params&amp;Return&amp;Return</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>func &lt;#funcName#&gt;Handler(&lt;#param1#&gt;:&lt;#paramType#&gt;)-&gt;&lt;#returnValueType#&gt;{
+    let value
+    
+    return value
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B2272A51-DE2D-4E5E-84A6-319B478C32C1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>带参数和返回值</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_API_CreateFunc_With_Params&amp;Return</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_OPTIONS</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>typedef NS_OPTIONS(NSUInteger,&lt;#StatementsDesc#&gt;) {
+    &lt;#StatementsDesc#&gt;_&lt;#desc1#&gt; = 0,// 
+    &lt;#StatementsDesc#&gt;_&lt;#desc2#&gt; = 1&lt;&lt;0,// 
+    &lt;#StatementsDesc#&gt;_&lt;#desc3#&gt; = 1&lt;&lt;1,// 
+};</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2B0DFEB2-837B-40A3-99B3-3A0C8F6E5B49</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Create_OPTIONS</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_OPTIONS</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

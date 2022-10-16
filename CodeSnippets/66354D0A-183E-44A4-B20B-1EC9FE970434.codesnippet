@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Foundation_Data_Store_Handler_With_NSFileManager</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> func storeData(data:NSData) {
+        guard data.length &gt; 0 else {
+             return
+        }
+        let docDirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
+        let fileStorePath:String =  (docDirPath! as NSString).appendingPathComponent("&lt;#fileName_Like:xxx.scv#&gt;")
+        
+        if !FileManager.default.fileExists(atPath: fileStorePath) {
+            FileManager.default.createFile(atPath: fileStorePath, contents: nil, attributes: nil)
+        }
+        let fileHandle:FileHandle = FileHandle(forUpdatingAtPath: fileStorePath)!
+        fileHandle.seekToEndOfFile()
+        fileHandle.write(data as Data)
+        fileHandle.closeFile()
+    }
+    
+    func fentchDataWithCacheFileName(fileName:String){
+        var data:Data?
+        let docDirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
+        let fileStorePath:String = (docDirPath! as NSString).appendingPathComponent(fileName)
+        if FileManager.default.fileExists(atPath: fileStorePath) {
+            let fileHandle:FileHandle = FileHandle(forReadingAtPath: fileStorePath)!
+            data = fileHandle.availableData
+            fileHandle.closeFile()
+        }
+        print("数据:\(String(describing: data))")
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>66354D0A-183E-44A4-B20B-1EC9FE970434</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通过文件管理器把数据写成文件进行数据存储</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Foundation_Data_Store_Handler_With_NSFileManager</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

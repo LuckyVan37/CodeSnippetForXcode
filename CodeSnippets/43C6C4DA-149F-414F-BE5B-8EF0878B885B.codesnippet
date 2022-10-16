@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_GCD: dispatch_async【ExcuteHandler_On_Serial_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //异步函数+串行队列:会开线程,开一条线程,队列中的任务是串行执行的
+   func asyncSerial(){ 
+       //1.创建队列
+       let serialQueue = DispatchQueue(label: "serialQueue")
+       //2.封装操作
+       serialQueue.async {
+           print("download1----\(Thread.current)")
+       }
+       serialQueue.async {
+           print("download2----\(Thread.current)")
+       }
+       serialQueue.async {
+           print("download3----\(Thread.current)")
+       }
+   }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>43C6C4DA-149F-414F-BE5B-8EF0878B885B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程：按照异步串行队列执行代码</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_GCD: dispatch_async【ExcuteHandler_On_Serial_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

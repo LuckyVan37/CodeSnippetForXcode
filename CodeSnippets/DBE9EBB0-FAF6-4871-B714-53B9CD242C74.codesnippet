@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_GCD: dispatch_async【ExcuteHandler_On_Global_Queue_Then_Excute_On_Main_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+
+dispatch_queue_t excuteHandlerQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(excuteHandlerQueue, ^{
+        NSLog(@"excuteHandlerThread----%@",[NSThread currentThread]);
+        
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+             NSLog(@"Update UI Thread----%@",[NSThread currentThread]);
+            
+            
+        });
+    });
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DBE9EBB0-FAF6-4871-B714-53B9CD242C74</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程:异步多线程执行耗时操作,回到主线程进行UI更新</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_GCD: dispatch_async【ExcuteHandler_On_Global_Queue_Then_Excute_On_Main_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

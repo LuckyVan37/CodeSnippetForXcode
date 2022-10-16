@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_Properties_List</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//Desc:
+@property (strong , nonatomic) &lt;#Class#&gt; &lt;#name#&gt;;
+//Desc:
+@property (weak  ,  nonatomic) &lt;#Class#&gt; &lt;#name#&gt;;
+//Desc:
+@property (assign,  nonatomic) &lt;#Class#&gt; &lt;#name#&gt;;
+//Desc:
+@property (copy ,   nonatomic) &lt;#Class#&gt; *&lt;#name#&gt;;
+//Desc:
+@property (readonly,nonatomic) &lt;#Class#&gt; *&lt;#name#&gt;;
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F0112DA4-A6D8-46EC-9E5B-FA862FA01750</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Create_Properties_List</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_Properties_List</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

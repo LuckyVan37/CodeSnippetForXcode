@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_GCD:dispatch_sync【ExcuteHandler_On_Concurrent_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//同步函数+并发队列:不会开线程,任务是串行执行的
+-(void)syncConcurrent
+{
+    //1.创建队列
+    dispatch_queue_t queue = dispatch_queue_create("com.520it.download", DISPATCH_QUEUE_CONCURRENT);
+    NSLog(@"---start---");
+    //2.封装任务
+    dispatch_sync(queue, ^{
+        NSLog(@"download1----%@",[NSThread currentThread]);
+    });
+    dispatch_sync(queue, ^{
+        NSLog(@"download2----%@",[NSThread currentThread]);
+    });
+    dispatch_sync(queue, ^{
+        NSLog(@"download3----%@",[NSThread currentThread]);
+    });
+    NSLog(@"---end---");
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>561C5168-8105-4293-A865-FA43D8022FE2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程:在串行并发队列</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_GCD:dispatch_sync【ExcuteHandler_On_Concurrent_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

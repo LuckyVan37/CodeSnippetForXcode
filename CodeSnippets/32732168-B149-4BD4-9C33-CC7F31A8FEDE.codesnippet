@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Add_Observer_For_UITextField_Core_Event</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    self.beginEditingObserver = [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidBeginEditingNotification
+                                                                                  object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSLog(@"%s",__func__);
+    }];
+    self.endEditingObserver = [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidEndEditingNotification
+                                                                                object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSLog(@"%s",__func__);
+    }];
+    self.didChangeTextObserver = [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification
+                                                                                object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSLog(@"%s",__func__);
+    }];
+    [[NSNotificationCenter defaultCenter] removeObserver:self.beginEditingObserver];
+    [[NSNotificationCenter defaultCenter] removeObserver:self.endEditingObserver];
+    [[NSNotificationCenter defaultCenter] removeObserver:self.didChangeTextObserver];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>32732168-B149-4BD4-9C33-CC7F31A8FEDE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给TextField核心事件添加监听</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Add_Observer_For_UITextField_Core_Event</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

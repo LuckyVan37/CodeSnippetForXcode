@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_Struct_Declation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>typedef struct {
+    &lt;#typeName#&gt; &lt;#objName1#&gt;;
+    &lt;#typeName#&gt; &lt;#objName2#&gt;;
+    &lt;#typeName#&gt; &lt;#objName3#&gt;;
+} &lt;#structName#&gt;;
+
+&lt;#structName#&gt; &lt;#StructObjName#&gt; = {1,2,3};
+NSValue *structValue = [NSValue valueWithBytes:&amp;&lt;#StructObjName#&gt; objCType:@encode(&lt;#structName#&gt;)];
+&lt;#structName#&gt; &lt;#StructObjName2#&gt;;
+[structValue getValue:&amp;&lt;#StructObjName2#&gt;];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2F6FFD04-F14B-45DA-97B7-63E8F5CC11DA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Create_Struct_Declation</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_Struct_Declation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

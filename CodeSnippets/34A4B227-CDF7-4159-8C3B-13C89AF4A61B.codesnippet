@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Path_For_PrivateBundle</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSString *&lt;#bundleDesc#&gt;BundlePath  =  [[NSBundle mainBundle]pathForResource:@"&lt;#PrivateBundleName#&gt;" ofType:@"bundle"];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>34A4B227-CDF7-4159-8C3B-13C89AF4A61B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Path_For_PrivateBundle</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Path_For_PrivateBundle</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

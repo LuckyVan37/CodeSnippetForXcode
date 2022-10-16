@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_Exception_Capture</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> 
+    [self excuteFunctionHandler:^{
+      
+    } catchException:^(NSException * _Nonnull exception) {
+        NSLog(@"%s,exception:%@",__func__,exception);
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C1B0D18A-2AE8-4A9F-AFDA-F29B3C95DEB6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Create_Exception_Capture</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_Exception_Capture</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

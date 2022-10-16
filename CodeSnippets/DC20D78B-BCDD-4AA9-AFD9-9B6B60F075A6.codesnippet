@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>iOS_Property_DescptionValue_KnowWhat</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ @public 就是实例变量修饰符
+ 
+ @public
+ &gt;可以在其它类中访问被public修饰的成员变量
+ &gt;也可以在本类中访问被public修饰的成员变量
+ &gt;可以在子类中访问父类中被public修饰的成员变量
+ 
+ @private
+ &gt;不可以在其它类中访问被private修饰的成员变量
+ &gt;可以在本类中访问被private修饰的成员变量
+ &gt;不可以在子类中访问父类中被private修饰的成员变量
+ 
+ @protected
+ &gt;不可以在其它类中访问被protected修饰的成员变量
+ &gt;可以在本类中访问被protected修饰的成员变量
+ &gt;可以在子类中访问父类中被protected修饰的成员变量
+ 
+ 注意: 默认情况下所有的实例变量都是protected
+ 
+ @package
+ &gt;介于public和private之间的
+ 如果是在其它包中访问那么就是private的
+ 如果是在当前代码所在的包种访问就是public的
+ 
+ 
+ 实例变量修饰符作用域: 从出现的位置开始, 一直到下一个修饰符出现
+ 如果没有遇到下一个实例变量修饰符, 那么就会修饰后面所有的实例变量
+*/</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DC20D78B-BCDD-4AA9-AFD9-9B6B60F075A6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>iOS_Property_DescptionValue_KnowWhat</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>iOS_Property_DescptionValue_KnowWhat</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

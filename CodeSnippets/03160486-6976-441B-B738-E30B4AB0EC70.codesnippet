@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_CALayer_Add_2D_Translation_Animation_With_CATransaction</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)setupLayer{
+    CALayer *layer = [CALayer layer];
+    layer.bounds = CGRectMake(0, 0, 100, 100);
+    layer.position = self.view.center;
+    layer.backgroundColor = [UIColor blueColor].CGColor;
+    self.layer = layer;
+    [self.view.layer addSublayer:layer];
+}
+
+-(void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event{
+    //只有非根层(自己手动创建的层)才有隐式动画
+    if (!self.layer) {
+        [self setupLayer];
+    }else{
+        [self startAnimation];
+    } 
+}
+- (void)startAnimation{
+    //隐式动画其实底层是包装成一个事务.
+    //什么是事务:有一组操作,绑定在一起, 当这一组操作全部执行完毕之后, 才能够做其它的事件.
+    //开启一个事务
+    [CATransaction begin];
+    //操作动画执行的时长.
+    [CATransaction setAnimationDuration:2];
+    //取消动画
+//    [CATransaction setDisableActions:YES];
+    self.layer.backgroundColor = [self randomColor].CGColor;
+    self.layer.cornerRadius = arc4random_uniform(50);
+    self.layer.position = CGPointMake(arc4random_uniform(300), arc4random_uniform(400));
+    [CATransaction commit];
+}
+- (UIColor *)randomColor{ 
+    CGFloat r = arc4random_uniform(256) /255.0;
+    CGFloat g = arc4random_uniform(256) /255.0;
+    CGFloat b = arc4random_uniform(256) /255.0; 
+    return [UIColor colorWithRed:r green:g blue:b alpha:1];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>03160486-6976-441B-B738-E30B4AB0EC70</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通过CATransaction作用在CALayer上进行位移动画</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_CALayer_Add_2D_Translation_Animation_With_CATransaction</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UILabel_Initialization</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UILabel *&lt;#using#&gt;Lb  = [[UILabel alloc]initWithFrame:CGRectZero];
+&lt;#using#&gt;Lb.text = @"&lt;#txtDesc#&gt;";
+&lt;#using#&gt;Lb.font = [UIFont boldSystemFontOfSize:&lt;#fontSize#&gt;];
+    &lt;#using#&gt;Lb.textColor = [UIColor blackColor];
+&lt;#using#&gt;Lb.textAlignment = NSTextAlignmentLeft;
+[&lt;#superView#&gt; addSubview:&lt;#using#&gt;Lb];
+    [&lt;#using#&gt;Lb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@(&lt;#value#&gt;));
+        make.top.equalTo(@(&lt;#value#&gt;));
+        make.width.equalTo(@(&lt;#value#&gt;));
+        make.height.equalTo(@(&lt;#value#&gt;));
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B2D55E77-848D-4777-98F6-A806208D7C46</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>添加UILabel</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UILabel_Initialization</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

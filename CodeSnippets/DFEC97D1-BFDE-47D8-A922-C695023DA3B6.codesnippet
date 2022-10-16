@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>C_Create_Inline_function</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//内联系函数的声明
+static void &lt;#FunctionName#&gt;();
+static void &lt;#FunctionName#&gt;()
+{
+    printf("%s",__func__);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DFEC97D1-BFDE-47D8-A922-C695023DA3B6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>C_Create_Inline_function</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>C_Create_Inline_function</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

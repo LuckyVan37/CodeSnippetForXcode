@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Str_Path_Handler_For_Path_Extension_Component_AbsoultePath_Check</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static void ExcuteStrPathHandlerQueue(void){
+    NSString *str = @"User/lnj/Desktop/lnj.txt.jpg";
+    // 1.判断是否是绝对路径
+   
+    // 其实本质就是判断字符串是否以/开头
+    if([str isAbsolutePath])
+    {
+        NSLog(@"是绝对路径");
+    }else{
+        NSLog(@"不是绝对路径");
+    }
+ 
+    
+    // 2.获取文件路径中的最后一个目录
+    // 本质就是获取路径中最后一个/后面的内容
+  
+    NSString *newStr = [str lastPathComponent];
+    NSLog(@"%@", newStr);
+   
+    
+    // 3.删除文件路径中的最后一个目录
+  
+    // 本质就是删除最后一个/后面的内容, 包括/也会被删除
+    NSString *newStr2 = [str stringByDeletingLastPathComponent];
+    NSLog(@"%@", newStr2);
+ 
+    
+    // 4.给文件路径添加一个目录
+ 
+     // 本质就是在字符串的末尾加上一个/ 和指定的内容
+     // 注意: 如果路径后面已经有了/, 那么就不会添加了
+     //      如果路径后面有多个/, 那么会自动删除多余的/, 只保留一个
+     NSString *newStr3 = [str stringByAppendingPathComponent:@"xmg"];
+     NSLog(@"%@", newStr3);
+  
+    
+    // 5.获取路径中文件的扩展名
+ 
+    // 本质就是从字符串的末尾开始查找., 截取第一个.后面的内容
+    NSString *newStr4 = [str pathExtension];
+    NSLog(@"%@", newStr4);
+ 
+    
+    // 6.删除路径中文件的扩展名
+ 
+    // 本质就是从字符串的末尾开始查找.,删除第一个.和.后面的内容
+    NSString *newStr5 = [str stringByDeletingPathExtension];
+    NSLog(@"%@", newStr5);
+ 
+    
+    // 7.给文件路径添加一个扩展名
+    // 本质就是在字符串的末尾加上一个.和指定的内容
+    NSString *newStr6 = [str stringByAppendingPathExtension:@"jpg"];
+    NSLog(@"%@", newStr6);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B45EBC38-BBFF-42B3-85DD-AB07B061B787</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Str_Path_Handler_For_Path_Extension_Component_AbsoultePath_Check</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Str_Path_Handler_For_Path_Extension_Component_AbsoultePath_Check</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

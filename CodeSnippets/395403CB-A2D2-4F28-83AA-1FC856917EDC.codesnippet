@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_Async_IMP_With_SignalBack_ExceptionMonitor</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (RACSignal*)request&lt;#dataDesc#&gt;DataWith&lt;#condition desc#&gt;{
+    return [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+        dispatch_queue_t excuteQueue = dispatch_queue_create("com.lr_cheetah.viewModel.&lt;#excueteDesc#&gt;", DISPATCH_QUEUE_CONCURRENT);
+        dispatch_group_t group = dispatch_group_create();
+        dispatch_group_enter(group);
+        @try {
+            
+                 dispatch_async(excuteQueue, ^{
+                     dispatch_group_leave(group);
+                     [subscriber sendNext:&lt;#successCallBack#&gt;];
+                 });
+            
+                 NSString *errDesc = [NSString stringWithFormat:@"&lt;#errDesc#&gt;",@""];
+                 NSError *err = [[NSError alloc]initWithDomain:NSOSStatusErrorDomain
+                                                          code:400
+                                                      userInfo:@{@"errorMsg":errDesc,NSLocalizedDescriptionKey:@"&lt;#err Local desc#&gt;"}];
+                 dispatch_async(excuteQueue, ^{
+                     dispatch_group_leave(group);
+                     [subscriber sendError:err];
+                 });
+                 
+ 
+        } @catch (NSException *exception) {
+             dispatch_async(excuteQueue, ^{
+                 NSError *err = [[NSError alloc]initWithDomain:NSOSStatusErrorDomain
+                     code:400
+                 userInfo:@{@"errorMsg":exception.description,NSLocalizedDescriptionKey:@"获取缓存数据,异常---闪退"}];
+                 dispatch_group_leave(group);
+                 [subscriber sendError:err];
+             });
+      
+        }
+        //全完成后执行事件
+        dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+            [subscriber sendCompleted];
+        });
+        return nil;
+    }];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>395403CB-A2D2-4F28-83AA-1FC856917EDC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Create_Async_IMP_With_SignalBack_ExceptionMonitor</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_Async_IMP_With_SignalBack_ExceptionMonitor</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

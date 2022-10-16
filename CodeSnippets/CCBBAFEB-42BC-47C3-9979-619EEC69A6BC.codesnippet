@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_GCD:dispatch_sync【ExcuteHandler_On_Concurrent_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func dispatch_sync_concurrent() {
+        //1.创建队列
+        let queue = DispatchQueue(label: "com.lucyVan.download", qos: .default, attributes: .concurrent)
+        print("---start---")
+        //2.封装任务
+        queue.sync {
+            print("download1----\(Thread.current)")
+        }
+        queue.sync {
+            print("download2----\(Thread.current)")
+        }
+        queue.sync {
+            print("download3----\(Thread.current)")
+        }
+        print("---end---");
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CCBBAFEB-42BC-47C3-9979-619EEC69A6BC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程:在串行并发队列</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_GCD:dispatch_sync【ExcuteHandler_On_Concurrent_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

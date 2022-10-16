@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Show_AlertSheet_Or_AlertView_By_AlertController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>   // Show Alert Sheet
+        let alertSheet:UIAlertController = UIAlertController(title: "Are You Sure?", message: nil, preferredStyle: .actionSheet)
+        let alertSheetAction_yes = UIAlertAction(title: "Yes, I'm sure!", style: .destructive, handler: { action in
+            
+            // Show Alert View
+            let msg = ((self.nameField.text?.isEmpty) != nil) ? "You can breathe easy, everything went OK."
+                : "You can breathe easy, \(String(describing: self.nameField.text)),"
+                  + " everything went OK."
+            
+            
+            let alertCtrl = UIAlertController(title: "Something Was Done", message: msg, preferredStyle: .alert)
+            let alertCancel = UIAlertAction(title: "Phew!", style: .cancel, handler: nil)
+            alertCtrl.addAction(alertCancel)
+            self.present(alertCtrl, animated: true, completion: nil)
+        })
+        
+        let alertSheetAction_no = UIAlertAction(title: "No way!", style: .cancel,handler: nil)
+        alertSheet.addAction(alertSheetAction_yes)
+        alertSheet.addAction(alertSheetAction_no)
+        
+        // Set Auto Adjust alert Sheet bubble for iPhone and iPad
+        if let alertSheet_ppc  = alertSheet.popoverPresentationController {
+            alertSheet_ppc.sourceView = sender
+            alertSheet_ppc.sourceRect = sender.bounds
+            
+        }
+        present(alertSheet, animated: true, completion: nil)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7B530EE8-7241-4A94-9FD2-1C67F0443F1B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>使用系统弹窗控件进行弹窗</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Show_AlertSheet_Or_AlertView_By_AlertController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

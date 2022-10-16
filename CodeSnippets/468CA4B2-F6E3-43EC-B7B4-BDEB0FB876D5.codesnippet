@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_RAC_Sbj_Action_Handler</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+//Desc:
+@property (strong, nonatomic) RACSubject *&lt;#handlerDesc#&gt;HandlerSbj; 
+[self.&lt;#handlerDesc#&gt;HandlerSbj sendNext:&lt;#params#&gt;];
+- (RACSubject *)&lt;#handlerDesc#&gt;HandlerSbj{
+    if (!_&lt;#handlerDesc#&gt;HandlerSbj) {
+        _&lt;#handlerDesc#&gt;HandlerSbj = [RACSubject subject];
+        [_&lt;#handlerDesc#&gt;HandlerSbj subscribeNext:^(id x) {
+            
+        }];
+    }
+    return _&lt;#handlerDesc#&gt;HandlerSbj;
+} </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>468CA4B2-F6E3-43EC-B7B4-BDEB0FB876D5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_RAC_Sbj_Action_Handler</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_RAC_Sbj_Action_Handler</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

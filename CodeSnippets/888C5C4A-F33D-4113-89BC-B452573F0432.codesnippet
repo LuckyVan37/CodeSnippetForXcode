@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_NSOperation_NSBlockOperation_With_Dependency</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  //1.创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    //2.创建另外一个队列
+    NSOperationQueue *queueOther = [[NSOperationQueue alloc]init];
+    
+    //3.封装操作
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"download1 ---%@",[NSThread currentThread]);
+    }];
+    
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"download2 ---%@",[NSThread currentThread]);
+    }];
+    
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"download3 ---%@",[NSThread currentThread]);
+    }];
+    
+    NSBlockOperation *op4 = [NSBlockOperation blockOperationWithBlock:^{
+        for (NSInteger i = 0; i&lt;100; i++) {
+            NSLog(@"download4 -%zd--%@",i,[NSThread currentThread]);
+        }
+    }];
+    //6.操作监听，当对应的任务执行完毕后，可以在block里面执行相关的扫尾操作
+    op4.completionBlock = ^{
+        //注意：执行该block块代码的线程和执行op4操作的线程不一定一致，使用GCD和NSOperation技术线程的分配是系统内部决定的
+        NSLog(@"任务op4已经执行完毕--%@",[NSThread currentThread]);
+    };
+    
+    NSBlockOperation *op01 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"任务01---%@",[NSThread currentThread]);
+    }];
+    
+    NSBlockOperation *op02 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"任务02---%@",[NSThread currentThread]);
+    }];
+    
+    //4.设置操作之间的依赖
+    //注意不能设置循环依赖，如果设置了循环依赖，那么对应的两个操作都将不会被执行
+    [op1 addDependency:op4];
+    //设置跨队列依赖
+    [op1 addDependency:op01];
+    [op02 addDependency:op1];
+    //op01&gt;op4&gt;op1&gt;op02
+    //op4&gt;op01&gt;op1&gt;op02
+    //5.添加操作到相应的队列
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperation:op3];
+    [queue addOperation:op4];
+    
+    [queueOther addOperation:op01];
+    [queueOther addOperation:op02];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>888C5C4A-F33D-4113-89BC-B452573F0432</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>多线层队列组_操作依赖</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_NSOperationQueue_NSBlockOperation_With_Dependency</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_HP_Weak_Strong_Object</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    HP_Weak_Object(&lt;#ObjectInstance#&gt;, &lt;#ObjectInstanceDesc#&gt;)
+    HP_Strong_Object(&lt;#weakObjectInstance#&gt;, &lt;#ObjectInstanceDesc#&gt;)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EB95EC15-F350-479D-9531-4D543FF670AA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>强引用,引用计数+1；弱引用,引用计数不+1</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_HP_Weak_Strong_Object</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

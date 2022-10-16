@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_get_storyboard_viewController_instance_with_sbName_sbId</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let firstVc:UIViewController = storyboard.instantiateViewController(identifier: "FirstViewController")
+        
+        if firstVc != nil  {
+            firstVc.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(firstVc, animated: true, completion: {
+                 print("eee")
+            })
+        }
+        //或者
+        if let firstVc:UIViewController = self.storyboard?.instantiateViewController(withIdentifier: "FirstViewController") {
+            firstVc.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(firstVc, animated: true, completion: {
+                 print("eee")
+            })
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>95E1756B-86D2-4846-8719-0808FD7FD497</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Swift获取故事版初始化控制器</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_get_storyboard_viewController_instance_with_sbName_sbId</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

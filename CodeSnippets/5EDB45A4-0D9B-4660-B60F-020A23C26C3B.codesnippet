@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_Create_UIView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UIView *&lt;#name#&gt;View = [[UIView alloc]initWithFrame:CGRectZero];
+    [&lt;#name#&gt;View setBackgroundColor:[UIColor clearColor]];
+[&lt;#superView#&gt; addSubview:&lt;#name#&gt;View];
+    [&lt;#name#&gt;View mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.equalTo(@(&lt;#value#&gt;));
+        make.width.equalTo(@(&lt;#value#&gt;));
+        make.height.equalTo(@(&lt;#value#&gt;));
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5EDB45A4-0D9B-4660-B60F-020A23C26C3B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_UI_Create_UIView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_Create_UIView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

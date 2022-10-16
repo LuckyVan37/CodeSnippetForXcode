@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_CreateNav_TitleView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UILabel *titleLb  = [[UILabel alloc]initWithFrame:CGRectZero];
+    titleLb.text = @"&lt;#titleDesc#&gt;";
+    titleLb.font = [UIFont boldSystemFontOfSize:15];
+    titleLb.textColor = [UIColor blackColor];
+    titleLb.textAlignment = NSTextAlignmentCenter;
+    [titleLb sizeToFit];
+    self.navigationItem.titleView = titleLb;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D3BF1242-4B2C-4038-8B3B-4CE854AE7989</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_CreateNav_TitleView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_CreateNav_TitleView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_array_for_Handler</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> 
+let array = ["LuckyVan","is","a","handsome","boy"]
+for i in array {
+    print(i)
+}
+
+for i in 0...3 {
+    print(array[i])
+}
+
+for i in array[3...] {
+    print(i)
+}
+
+for i in array[..&lt;2] {
+    print(i)
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>71E4D677-70AC-4CF1-8D3E-5F3B483CDBCC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Swift_array_for_Handler</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_array_for_Handler</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

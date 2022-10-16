@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_CALayer_Add3D_Translation_Animation_With_CATransform3D</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>[UIView animateWithDuration:1 animations:^{ 
+    //3D平移 x y z 轴的偏移量
+    &lt;#viewInstance#&gt;.layer.transform = CATransform3DMakeTranslation(&lt;#CGFloat tx#&gt;, &lt;#CGFloat ty#&gt;, &lt;#CGFloat tz#&gt;);
+}];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>54D0CDDB-661B-4A94-B92A-7F651F21A80E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>做位移3d动画 </string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_CALayer_Add3D_Translation_Animation_With_CATransform3D</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

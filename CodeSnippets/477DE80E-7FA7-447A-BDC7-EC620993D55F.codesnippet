@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_Vc_Instance_With_StoryboardId</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    UIViewController *orderListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"&lt;#storyboardId#&gt;"];
+    orderListViewController.modalPresentationStyle = UIModalPresentationFullScreen;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>477DE80E-7FA7-447A-BDC7-EC620993D55F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>根据storyboardId获取控制器实例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_Vc_Instance_With_StoryboardId</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

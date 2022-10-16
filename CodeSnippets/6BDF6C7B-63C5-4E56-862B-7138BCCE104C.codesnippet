@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Show_AlertSheet_Or_AlertView_By_AlertController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  __weak typeof(self)  weakSelf = self;
+//    __weak ViewController *weakSelf  = self;
+    void (^CallAlertCtrlSheetConfitmHandler)(UIAlertAction *action) = ^(UIAlertAction *action){
+        NSString *msg;
+        if ([weakSelf.nameField.text length] &gt; 0) {
+            msg = [NSString stringWithFormat:
+                   @"You can breathe easy, %@, everything went OK.",
+                   self.nameField.text];
+        } else {
+            msg = @"You can breathe easy, everything went OK.";
+        }
+        
+        // Show Alert View
+        UIAlertController *alertCtrl =  [UIAlertController alertControllerWithTitle:@"Something Was Done"
+                                 message:msg preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Phew!"
+                        style: UIAlertActionStyleCancel handler:nil];
+        
+        [alertCtrl addAction:cancelAction];
+        [weakSelf presentViewController:alertCtrl animated:YES completion:nil];
+        
+    };
+    // Show Alert Sheet
+    UIAlertController *alertCtrlSheet =  [UIAlertController alertControllerWithTitle:@"Are You Sure?"
+                message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    //
+    UIAlertAction *alertAction_yes = [UIAlertAction actionWithTitle:@"Yes, I'm sure!"
+                style:UIAlertActionStyleDestructive
+                handler:CallAlertCtrlSheetConfitmHandler];
+    
+    UIAlertAction *alertAction_no = [UIAlertAction actionWithTitle:@"No way!"
+                     style:UIAlertActionStyleCancel handler:nil];
+    [alertCtrlSheet addAction:alertAction_yes];
+    [alertCtrlSheet addAction:alertAction_no];
+    // Set Auto Adjust alert Sheet bubble for iPhone and iPad
+    UIPopoverPresentationController *ppc_autoAdjust_for_pad_and_phone = controller.popoverPresentationController;
+    if (ppc_autoAdjust_for_pad_and_phone != nil) {
+        ppc_autoAdjust_for_pad_and_phone.sourceView = sender;
+        ppc_autoAdjust_for_pad_and_phone.sourceRect = sender.bounds;
+    }
+    [self presentViewController:controller animated:YES completion:nil];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6BDF6C7B-63C5-4E56-862B-7138BCCE104C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>使用系统弹窗控件进行弹窗</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Show_AlertSheet_Or_AlertView_By_AlertController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

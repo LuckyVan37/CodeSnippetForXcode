@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_Class_Declare_Imp</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+
+typedef struct {
+    &lt;#typeName#&gt; &lt;#objName1#&gt;;
+    &lt;#typeName#&gt; &lt;#objName2#&gt;;
+    &lt;#typeName#&gt; &lt;#objName3#&gt;;
+} &lt;#structName#&gt;;
+
+&lt;#structName#&gt; &lt;#StructObjName#&gt; = {1,2,3};
+NSValue *structValue = [NSValue valueWithBytes:&amp;&lt;#StructObjName#&gt; objCType:@encode(&lt;#structName#&gt;)];
+&lt;#structName#&gt; &lt;#StructObjName2#&gt;;
+[structValue getValue:&amp;&lt;#StructObjName2#&gt;]; 
+@interface &lt;#className#&gt; :&lt;#superClass#&gt;
+
+@end
+@interface &lt;#className#&gt; (){
+    @public
+    &lt;#classTypeDescption#&gt; &lt;#*#&gt; &lt;#privatePropertyPointetName#&gt;;
+}
+
++ (void)&lt;#methondNameWithUsingDescption#&gt;With&lt;#ParamsDescption#&gt;:(&lt;#ParamTypeDescp#&gt;&lt;#*#&gt;)&lt;#paramName#&gt;;
+- (void)&lt;#methondNameWithUsingDescption#&gt;With&lt;#ParamsDescption#&gt;:(&lt;#ParamTypeDescp#&gt;&lt;#*#&gt;)&lt;#paramName#&gt;;
+- (&lt;#returnTypeDescption#&gt;&lt;#*#&gt;)&lt;#methondNameWithUsingDescption#&gt;With&lt;#ParamsDescption#&gt;:(&lt;#ParamTypeDescp#&gt;&lt;#*#&gt;)&lt;#paramName#&gt;;
+@end
+
+static void &lt;#FunctionName#&gt;();
+static void &lt;#FunctionName#&gt;()
+{
+    printf("%s",__func__);
+} 
+extern void &lt;#FunctionName#&gt;();
+extern void &lt;#FunctionName#&gt;()
+{
+    printf("%s",__func__);
+}
+
+@implementation &lt;#className#&gt;
+
++ (void)&lt;#methondNameWithUsingDescption#&gt;With&lt;#ParamsDescption#&gt;:(&lt;#ParamTypeDescp#&gt;&lt;#*#&gt;)&lt;#paramName#&gt;{
+    
+}
+- (void)&lt;#methondNameWithUsingDescption#&gt;With&lt;#ParamsDescption#&gt;:(&lt;#ParamTypeDescp#&gt;&lt;#*#&gt;)&lt;#paramName#&gt;{
+    
+}
+- (&lt;#returnTypeDescption#&gt;&lt;#*#&gt;)&lt;#methondNameWithUsingDescption#&gt;With&lt;#ParamsDescption#&gt;:(&lt;#ParamTypeDescp#&gt;&lt;#*#&gt;)&lt;#paramName#&gt;{
+    
+}
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D430C41D-C295-4534-9873-EE9639EA7022</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Create_Class_Declare_Imp</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_Class_Declare_Imp</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

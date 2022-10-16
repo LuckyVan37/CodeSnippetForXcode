@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UIImage_Check_UIImage_Type_by_SDWebImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  NSData *imageData = [NSData dataWithContentsOfFile:@"/Users/xiaomage/Desktop/Snip20160221_306.png"];
+    NSString *typeStr = [NSData sd_contentTypeForImageData:imageData];
+    NSLog(@"%@",typeStr);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1CC6AF70-70E7-40DF-A846-9028A9CFB017</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>检查UIImage类型 </string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UIImage_Check_UIImage_Type_by_SDWebImage</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

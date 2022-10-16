@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_CALayer_Add_Animation_With_CATransition_By_API_addAnimation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    CATransition * transition = [CATransition animation];
+    transition.duration = 0.37;
+    transition.type = &lt;#Animation_type#&gt;;//Animation start with type, like kCATransitionMoveIn
+    transition.subtype = &lt;#Animation_start_from_direction#&gt;;//Animation start from direction, like  kCATransitionFromLeft
+    [&lt;#viewInstance_pointer#&gt;.layer addAnimation:transition forKey:nil];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8D11929F-1F85-4E54-8659-287F375E290E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给layer层添加转场动画 </string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_CALayer_Add_Animation_With_CATransition_By_API_addAnimation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Cache_Array_Data_With_CachePath</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static void CacheArrayDataQueue(void){
+    NSArray *arr = @[@1, @2, @3, @4];
+//     注意:writeToFile只能写入数组中保存的元素都是Foundation框架中的类创建的对象, 如果保存的是自定义对象那么不能写入
+    NSString *cacheDirectoryPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
+    NSString *fileCachePath  = [NSString stringWithFormat:@"%@/number.plist",cacheDirectoryPath]; 
+    BOOL flag = [arr writeToFile:fileCachePath atomically:YES];
+    NSLog(@"flag = %i", flag);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AD819E0C-49F7-4F23-8AD0-6F129C422387</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Cache_Array_Data_With_CachePath</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Cache_Array_Data_With_CachePath</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

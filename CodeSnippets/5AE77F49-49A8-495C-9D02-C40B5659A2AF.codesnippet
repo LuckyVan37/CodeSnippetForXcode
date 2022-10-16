@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Stretch_Image</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> UIImage *image = ImageNamed(@"&lt;#imageName#&gt;");
+    NSInteger leftCapWidth = image.size.width * 0.5f;
+    // 顶端盖高度
+    NSInteger topCapHeight = image.size.height * 0.5f;
+    // 重新赋值
+    image = [image stretchableImageWithLeftCapWidth:leftCapWidth topCapHeight:topCapHeight];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5AE77F49-49A8-495C-9D02-C40B5659A2AF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Stretch_Image</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Stretch_Image</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

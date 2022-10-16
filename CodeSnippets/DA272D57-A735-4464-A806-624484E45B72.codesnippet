@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_for_handler_with_from_to_and_space</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// x的取值：从0开始，累加interVal，不超过aValue
+let aValue = 100
+let interVal = 2
+for x in stride(from: 0, to: aValue, by: interVal) {
+    print(x)
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DA272D57-A735-4464-A806-624484E45B72</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Swift_for_handler_with_from_to_and_space</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_for_handler_with_from_to_and_space</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

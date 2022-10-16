@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_GCD: dispatch_apply【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+
+    NSUInteger  countValue = 100000;
+    __block NSUInteger  idx = 0;
+    dispatch_apply(countValue, dispatch_get_global_queue(0, 0), ^(size_t i) { 
+        NSLog(@"%zd",idx);
+        idx += 1;
+    });</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7798E57F-61A3-40D6-B711-0D6DA925C439</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程:GCD快速遍历执行</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_GCD: dispatch_apply【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

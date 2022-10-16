@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Setup_Appdelegate_Basic</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface AppDelegate : UIResponder &lt;UIApplicationDelegate&gt;
+/// 程序主窗口
+@property (strong, nonatomic) UIWindow *window;
+@end
+
+
+@interface AppDelegate ()
+/// 主窗口根控制器
+@property (strong, nonatomic) UIViewController *rootViewController;
+@end
+
+@implementation AppDelegate
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [_window setRootViewController:self.rootViewController];
+    [_window makeKeyAndVisible];
+    return YES;
+}
+
+
+-(UIViewController *)rootViewController{
+    if (!_rootViewController) {
+        &lt;#statements#&gt;
+    }
+    return _rootViewController;
+}
+
+@end
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A96E4E29-3005-40E1-AFBD-6880952B4838</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>初始化程序代理的实现</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Setup_Appdelegate_Basic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

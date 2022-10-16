@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_HeaderFile_EnviromentLimitation_Codes_Input</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#ifdef __OBJC__ 
+#ifdef __cplusplus
+//#include &lt;opencv2/opencv.hpp&gt;
+//#include &lt;opencv2/stitching/detail/blenders.hpp&gt;
+//#include &lt;opencv2/stitching/detail/exposure_compensate.hpp&gt;
+#else
+#import &lt;Foundation/Foundation.h&gt;
+#import &lt;UIKit/UIKit.h&gt;
+#import &lt;Availability.h&gt;
+#endif
+
+
+
+#endif</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1E1FCD63-4C98-4D99-843F-6C5F4C898A8A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Create_HeaderFile_EnviromentLimitation_Codes_Input</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_HeaderFile_EnviromentLimitation_Codes_Input</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

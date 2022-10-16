@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Create_SegmentControl_And_Click_Response_Func</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>   func addSegmentControl(){
+        var itms = ["选项1","选项2"] as [AnyObject]
+        itms.append(UIImage(named: "item03")!)
+        let segmentedControl = UISegmentedControl(items:itms)
+        segmentedControl.center=self.view.center
+        segmentedControl.selectedSegmentIndex=1
+        segmentedControl.tintColor=UIColor.red
+        segmentedControl.addTarget(self, action: #selector(segmentedControlClickHandler), for: .valueChanged)
+        self.view.addSubview(segmentedControl)
+    }
+    @objc func segmentedControlClickHandler(sendor:UISegmentedControl){
+        let value = sendor.selectedSegmentIndex
+        
+        switch value {
+            case 0:
+                print("选项1")
+            case 1:
+                print("选项2")
+            default:
+                print(UIImage(named: "item03")!)
+                break
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F47A8B47-4676-4B8E-9DF3-DB7877DAF8B5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>添加SegmentControl与点击事件</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Create_SegmentControl_And_Click_Response_Func</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

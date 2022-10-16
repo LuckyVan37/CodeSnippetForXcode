@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Ali_MPaaS_CreateJSApiHandler</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface &lt;#className#&gt; ()
+
+@property (nonatomic, copy) PSDJsApiResponseCallbackBlock callback;
+
+@end
+
+- (void)handler:(NSDictionary *)data context:(PSDContext *)context callback:(PSDJsApiResponseCallbackBlock)callback{
+    [super handler:data context:context callback:callback];
+    //    PSDInvocationEvent *event = (PSDInvocationEvent *)context.event;
+    //    NSString *jsApiName = event.jsApi.name;
+//    self.callback = [callback copy];
+//    if ([jsApiName isEqualToString:@"&lt;#jsapiName#&gt;"]) {//&lt;#jsapiDesc#&gt;
+//        [self &lt;#selDescName#&gt;WithData:data callback:callback];
+//    }
+}
+//- (void)&lt;#selDescName#&gt;WithData:(NSDictionary*)data callback:(PSDJsApiResponseCallbackBlock)callback{
+//    
+//}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4F5E282E-75A2-456A-B6D6-B0DECC95F17D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Ali_MPaaS_CreateJSApiHandler</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Ali_MPaaS_CreateJSApiHandler</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_Monitor_For_NotificationCenter_Msg_Post_With_NotifyName_For_BusinessScene</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSString *noticeName = @"&lt;#notifyNameDescForBussinessScene#&gt;";
+id noticeObject = nil;
+id observer = [[NSNotificationCenter defaultCenter] addObserverForName:noticeName object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    id object = note.object;
+    NSString *notificationName = note.name;
+    NSDictionary *userInfo = [note.userInfo copy];
+    NSLog(@"Notify Name:%@",notificationName);
+    NSLog(@"Notify Object:%@",object);
+    NSLog(@"Notify Params(userInfo):%@",userInfo);
+}];
+NSMutableDictionary *userInfo   = [NSMutableDictionary dictionary];
+[[NSNotificationCenter defaultCenter]postNotificationName:noticeName object:noticeObject userInfo:userInfo];
+[[NSNotificationCenter defaultCenter] removeObserver:observer];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B9334981-CF00-4007-98A7-AB34798C92CF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给业务场景的事件响应链,创建广播监听和监听回调处理</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_Monitor_For_NotificationCenter_Msg_Post_With_NotifyName_For_BusinessScene</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

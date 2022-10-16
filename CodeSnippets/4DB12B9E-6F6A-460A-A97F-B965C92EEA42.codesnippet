@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Generate_KVC_SetValue</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> [&lt;#objInstance#&gt; setValue:&lt;#value#&gt; forKey:&lt;#propertyNameKey#&gt;];
+    [&lt;#objInstance#&gt; setValue:&lt;#value#&gt; forKeyPath:&lt;#propertyNameKeyPathLikeXX.XX/XX#&gt;]; // 自动类型转换</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4DB12B9E-6F6A-460A-A97F-B965C92EEA42</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Generate_KVC_SetValue</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Generate_KVC_SetValue</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

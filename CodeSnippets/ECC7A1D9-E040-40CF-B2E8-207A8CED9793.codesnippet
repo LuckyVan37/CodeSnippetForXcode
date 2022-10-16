@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Cache_Data_By_JsonString_With_Cache_FileURL</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@try {
+        // 将字符串写入到文件中
+        id object = &lt;#theObjWhichOughtToTransform#&gt;;
+        NSError *transformToJsonDataErr;
+        NSData *data =  [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingFragmentsAllowed error:&amp;&amp;transformToJsonDataErr];
+        if (!transformToJsonDataErr) {
+            NSString *&lt;#dataDescpiton#&gt;JsonString = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            // atomically 如果传入YES, 字符串写入文件的过程中如果没有写完, 那么不会生成文件
+            //            如果传入NO, 字符串写入文件的过程中如果没有写完, 会生成文件
+            NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
+            NSString *fileDescpiton = &lt;#fileDescptionName#&gt;;
+            cachePath = [cachePath stringByAppendingPathComponent:fileDescpiton];
+            cachePath = [cachePath stringByAppendingPathExtension:@"txt"];
+            
+            NSURL *url = [NSURL fileURLWithPath:cachePath];
+            NSError *err;
+            BOOL resultFlag = [&lt;#dataDescpiton#&gt;JsonString writeToURL:url atomically:YES encoding:NSUTF8StringEncoding error:&amp;err];
+            NSLog(@"flag = %i", resultFlag);
+            if (err) {
+                NSLog(@"Cache JSON data Fail With Err:%@",err.localizedDescription);
+            }else{
+                NSLog(@"Cache JSON data Successed");
+            }
+        }else{
+            NSLog(@"转JSON字符串失败:%@",transformToJsonDataErr.localizedDescription);
+        }
+    } @catch (NSException *exception) {
+        NSLog(@"exception:%@",exception);
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ECC7A1D9-E040-40CF-B2E8-207A8CED9793</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Cache_Data_By_JsonString_With_Cache_FileURL</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Cache_Data_By_JsonString_With_Cache_FileURL</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_GCD: dispatch_async【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//异步函数+并发队列:会开启多条线程,队列中的任务是并发执行
+    func asyncConcurrent() {
+        //1.创建队列
+        let queue = DispatchQueue.global(qos: .default)
+        print("start")
+         
+        /*
+            第一个参数:队列
+            第二个参数:要执行的任务
+        */
+        queue.async {
+            print("download1----\(Thread.current)")
+        }
+        queue.async {
+            print("download2----\(Thread.current)")
+        }
+        queue.async {
+            print("download3----\(Thread.current)")
+        }
+        print("end")
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3E17BD7C-E9FC-49A3-9E55-AB2EEDD754C9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程:异步执行多线程并发队列代码块</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_GCD: dispatch_async【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

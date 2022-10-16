@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Methond_With_Return_NSDictionary</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSDictionary*)&lt;#methondNameWithUsingDescption#&gt;With&lt;#ParamsDescption#&gt;:(&lt;#ParamTypeDescp#&gt;&lt;#*#&gt;)&lt;#paramName#&gt;;
+- (NSDictionary*)&lt;#methondNameWithUsingDescption#&gt;With&lt;#ParamsDescption#&gt;:(&lt;#ParamTypeDescp#&gt;&lt;#*#&gt;)&lt;#paramName#&gt;{
+    
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C6EEB0E7-4D52-4191-B1C2-660472961188</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Methond_With_Return_NSDictionary</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Methond_With_Return_NSDictionary</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

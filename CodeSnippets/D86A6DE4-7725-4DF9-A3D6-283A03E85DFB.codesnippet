@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Runtime_Set&amp;Get</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import &lt;objc/runtime.h&gt;
+    objc_setAssociatedObject(self, @selector(&lt;#selector#&gt;), &lt;#id  _Nullable value#&gt;, &lt;#objc_AssociationPolicy policy#&gt;);
+    objc_getAssociatedObject(self, _cmd);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D86A6DE4-7725-4DF9-A3D6-283A03E85DFB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Runtime_Set&amp;Get</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Runtime_Set&amp;Get</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Delegate_Create_Protocol</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Foundation
+
+protocol &lt;#DelegateProcolName#&gt;Protocol :NSObjectProtocol{
+    
+    ///  - FuncDescTitle:
+    ///
+    ///  - FuncDescDetail:
+    ///
+    ///  - Parameter param1:
+    ///  - Parameter param2:
+    ///  - Returns:
+    ///
+    ///  - Note:
+    func &lt;#name#&gt;(_ &lt;#parameters#&gt;:&lt;#parameters_Type#&gt;,_ &lt;#parameters#&gt;:&lt;#parameters_Type#&gt;)
+    
+    ///  - FuncDescTitle:
+    ///
+    ///  - FuncDescDetail:
+    ///
+    ///  - Parameter arg:
+    ///  - Returns:
+    ///
+    ///  - Note:
+    func &lt;#name#&gt;(_ &lt;#parameters#&gt;:&lt;#parameters_Type#&gt;) -&gt; &lt;#return type#&gt;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DB27E6F1-84C2-4A6F-8101-B8039D5A6099</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>创建一个代理的协议</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Delegate_Create_Protocol</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

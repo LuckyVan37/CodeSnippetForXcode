@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Compare_Two_String_By_Function</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static void CompareStringQueue(NSString*string1,NSString*string2)
+{
+    NSString *str1 = string1;
+    NSString *str2 = string2;
+    
+    
+    // 比较两个字符串的"内容"是否相同
+    BOOL flag = [str1 isEqualToString:str2];
+    NSLog(@"flag = %i", flag);
+    
+    // 下面这个方法, 是比较两个字符串的"地址"是否相同
+    flag = (str1 == str2);
+    NSLog(@"flag = %i", flag);
+ 
+    
+    // 比较字符串的大小
+  
+    // NSOrderedAscending  前面的小于后面的
+    // NSOrderedSame,  两个字符串相等
+    // NSOrderedDescending  前面的大于后面的
+    switch ([str1 compare:str2]) {
+        case NSOrderedAscending:
+            NSLog(@"str1小于str2");
+            break;
+        case NSOrderedSame:
+            NSLog(@"str1等于str2");
+            break;
+        case NSOrderedDescending:
+            NSLog(@"str1大于str2");
+            break;
+        default:
+            break;
+    }
+   
+    
+ 
+    // 忽略大小写进行比较
+    switch ([str1 caseInsensitiveCompare:str2]) {
+        case NSOrderedAscending:
+            NSLog(@"str1小于str2");
+            break;
+        case NSOrderedSame:
+            NSLog(@"str1等于str2");
+            break;
+        case NSOrderedDescending:
+            NSLog(@"str1大于str2");
+            break;
+        default:
+            break;
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D471CD06-D24E-4B2D-A3FF-86B52CE61CE0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Compare_Two_String_By_Function</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Compare_Two_String_By_Function</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

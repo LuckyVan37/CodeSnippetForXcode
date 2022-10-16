@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_get_storyboard_viewController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>   
+    //1创建storyBoard对象
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"&lt;#storyboardName#&gt;" bundle:nil];
+    //2.加载storyBoard箭头指向的控制器
+    UIViewController *vc =  [storyBoard instantiateInitialViewController];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8D621781-1F8C-4F9B-9C46-46AA7996836D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_get_storyboard_viewController</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_get_storyboard_viewController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

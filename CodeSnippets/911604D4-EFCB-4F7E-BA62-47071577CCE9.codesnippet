@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_Log_Format</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import &lt;Foundation/Foundation.h&gt;
+@implementation NSDictionary (Log)
+- (NSString *)descriptionWithLocale:(id)locale{
+    NSMutableString *string = [NSMutableString string];
+    
+    [string appendString:@"{\n"];
+    
+    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [string appendFormat:@"\t%@", key];
+        [string appendString:@" : "];
+        [string appendFormat:@"%@,\n", obj];
+    }];
+    
+    [string appendString:@"}"];
+    
+    NSRange range = [string rangeOfString:@"," options:NSBackwardsSearch];
+    if (range.location != NSNotFound)
+    [string deleteCharactersInRange:range];
+    
+    return string;
+}
+@end
+
+@implementation NSArray (Log) 
+- (NSString *)descriptionWithLocale:(id)locale
+{
+    NSMutableString *string = [NSMutableString string];
+    
+    [string appendString:@"[\n"];
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [string appendFormat:@"\t%@,\n", obj];
+    }];
+    
+    [string appendString:@"]"];
+     
+    NSRange range = [string rangeOfString:@"," options:NSBackwardsSearch];
+    if (range.location != NSNotFound)
+    [string deleteCharactersInRange:range];
+    
+    return string;
+}
+@end
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>911604D4-EFCB-4F7E-BA62-47071577CCE9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Create_Log_Format</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_Log_Format</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_SetUp_Window_With_HPBeeHive</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import "HPHomeModuleServiceProtocol.h"
+#import "HPContextMicroServiceManager.h"
+#import "HPBeeHive.h"
+@interface &lt;#AppDelegateName#&gt; ()
+//Desc:
+@property (strong, nonatomic) UIViewController *rootViewController;
+@end
+@implementation &lt;#AppDelegateName#&gt;
+- (UIViewController *)rootViewController{
+    if (!_rootViewController) {
+        //首页
+//        _rootViewController = [self getMicroServiceModuleVcInstanceWithService:NSProtocolFromString(@"HPHomeModuleServiceProtocol")];
+        //生活
+//        _rootViewController = [self getMicroServiceModuleVcInstanceWithService:NSProtocolFromString(@"HPLifeModuleServiceProtocol")];
+        
+        //社区
+        _rootViewController = [self getMicroServiceModuleVcInstanceWithService:NSProtocolFromString(@"HPCommunityModuleServiceProtocol")];
+        //消息
+//        _rootViewController = [self getMicroServiceModuleVcInstanceWithService:NSProtocolFromString(@"HPMessageModuleServiceProtocol")];
+        //我的
+//        _rootViewController = [self getMicroServiceModuleVcInstanceWithService:NSProtocolFromString(@"HPMineModuleServiceProtocol")];
+        
+    }
+    return _rootViewController;
+}
+- (UIViewController*)getMicroServiceModuleVcInstanceWithService:(Protocol*)proto{
+    if(!proto)return nil;
+    id service = [[HPContextMicroServiceManager sharedInstance]serviceInstanceWithProto:proto];
+    return  [service moduleVcInstance];
+}
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [HPBeeHive application:application didFinishLaunchingWithOptions:launchOptions];
+    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [_window setRootViewController:self.rootViewController];
+    [_window makeKeyAndVisible];
+    // Override point for customization after application launch.
+    return YES;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6845C041-820B-4C4F-9050-D03CD162CCC8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>创建主窗口</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_SetUp_Window_With_HPBeeHive</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

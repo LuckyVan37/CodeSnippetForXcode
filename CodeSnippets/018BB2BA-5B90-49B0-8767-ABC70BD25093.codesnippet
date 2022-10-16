@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UICollectionView_Initlization</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+@interface &lt;#class#&gt; ()&lt;UICollectionViewDelegate,UICollectionViewDataSource&gt;
+@property (strong, nonatomic) UICollectionView * collectionView;
+@property (strong, nonatomic) NSMutableDictionary* requestParams;
+@property (assign, nonatomic) NSInteger pageCount;
+@property (strong, nonatomic) NSMutableArray *items;
+@property (strong, nonatomic) UICollectionViewFlowLayout *layout;
+@end 
+ 
+- (UICollectionViewFlowLayout *)layout{
+    if (!_layout) {
+        _layout = [[UICollectionViewFlowLayout alloc]init];
+        _layout.itemSize = CGSizeMake(60, 60);
+        _layout.minimumLineSpacing = 0;
+        _layout.minimumInteritemSpacing = 0;
+        _layout.scrollDirection = UICollectionViewScrollDirectionHorizontal; 
+        _layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    }
+    return _layout;
+}
+-(UICollectionView*)collectionView{
+    if (!_collectionView) {
+        _collectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:self.layout]; 
+        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])]; 
+        [_collectionView setBackgroundColor:[UIColor clearColor]];
+        _collectionView.delegate  = self;
+        _collectionView.dataSource = self;
+    }
+    return _collectionView;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>018BB2BA-5B90-49B0-8767-ABC70BD25093</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>构造UICollectionView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UICollectionView_Initlization</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

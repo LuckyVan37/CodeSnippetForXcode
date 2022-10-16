@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UITableView_setup_diy_TableView_with_class_NSTableView_by_CommonUIFactoryTool's_API_in_NSWidget</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>[NSCommonUIFactory tableViewWithSuperView:&lt;#superView#&gt;  datasource:^(NSTableView *tableView, NSDataSource *dataSource) {
+    //1.Registe Class
+    NSMutableArray *ClassList  = [NSMutableArray array];
+    [ClassList addObject:[&lt;#TableViewCellClass#&gt; class]];
+    for (Class cellClass in ClassList) {
+        BOOL isTbClass  = [cellClass isSubclassOfClass:[UITableViewCell class]];
+        BOOL isTbHeaderFooterClass  = [cellClass isSubclassOfClass:[UITableViewHeaderFooterView class]];
+        if (isTbClass||isTbHeaderFooterClass) {
+            dataSource.registTableViewCellWithClass(cellClass,tableView);
+        }
+    }
+    
+    //2.Set section row
+    [dataSource tb_SetNumberOfSections:^NSUInteger(UITableView *tableView) {
+        return 1;
+    } setNumberOfRows:^NSUInteger(UITableView *tableView, NSUInteger section) {
+        return 1;
+    } setCellForRow:^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
+        &lt;#TableViewCellClass#&gt; *cell = [tableView dequeueReusableCellWithIdentifier:[&lt;#TableViewCellClass#&gt;  reuseIdentifier]];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = [UIColor colorWithRed:(arc4random_uniform(256)/255.0) green:(arc4random_uniform(256)/255.0) blue:(arc4random_uniform(256)/255.0) alpha:1.0];
+        return cell;
+    }];
+} delegate:^(NSTableView *tableView, NSDelegate *delegate) {
+    [delegate tb_SetHeightForHeader:^CGFloat(UITableView *tableView, NSUInteger section) {
+        return 0;
+    } SetHeightForFooter:^CGFloat(UITableView *tableView, NSUInteger section) {
+        return 0;
+    } SetHeightForRow:^CGFloat(UITableView *tableView, NSIndexPath *indexPath) {
+        CGFloat rowHeight = 425;
+        return rowHeight;
+    }];
+    [delegate tb_SetViewForHeader:^UIView *(UITableView *tableView, NSUInteger section) {
+        return nil;
+    } SetViewForFooter:^UIView *(UITableView *tableView, NSUInteger section) {
+        return nil;
+    }];
+    [delegate tb_SetSelectResponseForRow:^(UITableView *tableView, NSIndexPath *indexPath) {
+        NSLog(@"%s",__func__);
+    }didSelectForRow:^(UITableView *tableView, NSIndexPath *indexPath) {
+        NSLog(@"%s",__func__);
+    }];
+    [delegate SetDidScroll:^(UIScrollView *scrollView, CGPoint contentOffset, CGSize contentSize, UIEdgeInsets contentInset) {
+        NSLog(@"%s",__func__);
+    }];
+}];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6DF03D58-F772-49BC-9D32-B13E41BB3911</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通过NSWidget组件中的公共工厂方法构造自定义表单视图的实例和回调方法</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UITableView_setup_diy_TableView_with_class_NSTableView_by_CommonUIFactoryTool's_API_in_NSWidget</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

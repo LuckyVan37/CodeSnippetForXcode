@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_GCD: dispatch_async【ExcuteHandler_On_Main_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>   func asyncMain(){
+       //1.获得主队列
+       let mainQueue = DispatchQueue.main
+       //2.异步函数
+       mainQueue.async {
+           print("download1----\(Thread.current)")
+       }
+       mainQueue.async {
+           print("download2----\(Thread.current)")
+       }
+       mainQueue.async {
+           print("download3----\(Thread.current)")
+       }
+   }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E74A32C1-FDF0-42F1-AB9B-B5A24896709B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程：按照异步执行主线程队列代码</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_GCD: dispatch_async【ExcuteHandler_On_Main_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

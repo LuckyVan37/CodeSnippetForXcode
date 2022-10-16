@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UITableView_setup_delegate_datasource_config</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+#pragma UITableViewDelegate_Datasource
+// Display customization :Read Detail From UITableViewDelegate
+
+// Variable height support
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
+    
+     switch (indexPath.section) {
+        case 0:
+            cell.textLabel.text = @"0";
+            break;
+        case 1:
+            cell.textLabel.text = @"1";
+            break;
+        default:
+            cell.textLabel.text = @"Unknown";
+    }
+    
+    UIImage *flowerImage = [UIImage imageNamed:
+                            [NSString stringWithFormat:@"%@%@",cell.textLabel.text,@".png"]];
+    
+    cell.imageView.image=flowerImage;
+    
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+
+}
+/**
+ *  将要显示时候的动画效果
+ */
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   static CGFloat initialDelay = 0.1f;
+   static CGFloat stutter = 0.06f;
+   if (indexPath.row &lt; 10 ){
+       //显示摄像机时候禁用动画
+       cell.transform = CGAffineTransformMakeTranslation(SCREENWIDTH, 0);
+       CGFloat delayTime = initialDelay + ((indexPath.row) * stutter);
+       [UIView animateWithDuration:1. delay:delayTime usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
+           cell.transform = CGAffineTransformIdentity;
+       } completion:NULL];
+   }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BFF4FA05-BF82-43D5-AFEF-66C7E7113F7F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>添加UITableView的数据源和事件代理配置的重载API入口</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UITableView_setup_delegate_datasource_config</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

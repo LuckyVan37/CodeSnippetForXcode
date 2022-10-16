@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_Create_UIImageView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UIImageView *&lt;#name#&gt;ImgView = [[UIImageView alloc]initWithFrame:CGRectZero]; 
+UIImage *&lt;#name#&gt;Img = ImageNamed(@"&lt;#name#&gt;");
+[&lt;#name#&gt;ImgView setImage:&lt;#name#&gt;Img];
+[&lt;#superView#&gt; addSubview:&lt;#name#&gt;ImgView];
+[&lt;#name#&gt;ImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.top.equalTo(@(&lt;#value#&gt;));
+    make.width.equalTo(@(&lt;#name#&gt;Img.size.width));
+    make.height.equalTo(@(&lt;#name#&gt;Img.size.height));
+}];
+ </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1BA98112-D7FC-4F33-9E1E-26A0DD30CE61</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_UI_Create_UIImageView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_Create_UIImageView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

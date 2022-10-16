@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_ViewModel_Setup</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+
+@interface &lt;#ctrlName#&gt; ()
+//Desc:
+@property (strong, nonatomic) &lt;#vmdClass#&gt; *viewModel;
+@end
+
+- (void)bindViewModel{
+   self.viewModel  = [&lt;#vmdClass#&gt; modelWithSuperViewController:self];
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DF0B826E-12F0-4158-BDB6-2C6730F55F8C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_ViewModel_Setup</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_ViewModel_Setup</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

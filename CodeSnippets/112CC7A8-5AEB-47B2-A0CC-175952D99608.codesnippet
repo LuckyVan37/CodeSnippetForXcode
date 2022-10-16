@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_YYModel_MapModel_With_JSON</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>&lt;#MapClassName#&gt; *model [&lt;#MapClassName#&gt; yy_modelWithJSON:&lt;#json#&gt;];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>112CC7A8-5AEB-47B2-A0CC-175952D99608</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_YYModel_MapModel_With_JSON</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_YYModel_MapModel_With_JSON</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

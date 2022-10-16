@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_get_Screen_Shot_Image</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (UIImage *)getScreenShotImage{
+    
+    //开启一个跟控制器view相同大小的上下文.
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0);
+    //把View的内容绘制到上下文当中.
+    //注意:View是不能够直接绘制到上下文当中的.View之所以能够显示是因为它内部有一个layer(层),
+    //层是通过渲染的方式绘制到上下文当中的.
+    
+    //获取当前的上下文.
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [self.view.layer renderInContext:ctx];
+    
+    
+    //从上下文当中生成一张图片
+    UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //关闭上下文.
+    UIGraphicsEndImageContext();
+    
+
+    //把生成的图片写到桌面上.
+    //桌面都是以流的形式传递数据,所以我们要把图片转成二进流.
+    //image:要转的图片
+    //compressionQuality:压缩质量,1代表质量最高
+    NSData *data = UIImageJPEGRepresentation(screenImage, 1);
+    [data writeToFile:@"/Users/gaoxinqiang/Desktop/clipImage" atomically:YES];
+    return screenImage;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6AA4F18D-B23A-4F0B-B3A6-91BB2296FAD6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_get_Screen_Shot_Image</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_get_Screen_Shot_Image</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

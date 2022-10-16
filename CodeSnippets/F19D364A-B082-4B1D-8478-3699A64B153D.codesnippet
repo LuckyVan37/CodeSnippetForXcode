@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_CreateSingleton_MRC</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+static id _instance;
+
+//1.alloc--&gt;allocWithZone
++(instancetype)allocWithZone:(struct _NSZone *)zone
+{
+    //本身就是线程安全的
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    
+    return _instance;
+}
+
+//2.提供类方法
++(instancetype)shareTool
+{
+    return [[self alloc]init];
+}
+
+//3.严谨
+-(id)copyWithZone:(NSZone *)zone
+{
+    return _instance;
+}
+
+-(id)mutableCopyWithZone:(NSZone *)zone
+{
+    return _instance;
+}
+
+#if __has_feature(objc_arc)
+//条件满足 ARC
+#else
+// MRC
+-(oneway void)release
+{
+    
+}
+
+-(instancetype)retain
+{
+    return _instance;
+}
+
+//习惯
+-(NSUInteger)retainCount
+{
+    return MAXFLOAT;
+}
+
+#endif
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F19D364A-B082-4B1D-8478-3699A64B153D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>MRC下的单例模式</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_CreateSingleton_MRC</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

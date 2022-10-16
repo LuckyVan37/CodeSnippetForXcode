@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Add_ScrollView_for_View</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+func add_ui_scrollView(_ frame :CGRect) {
+    let scrollView = UIScrollView(frame: frame)
+    self.view.addSubview(scrollView)
+    self.setup_ui_scrollView(scrollView)
+    scrollView.isPagingEnabled = true
+    scrollView.contentOffset = CGPoint(x: 0, y: 0);
+    scrollView.delegate = self
+}
+
+func setup_ui_scrollView(_ scrollView :UIScrollView) {
+    //UIImageに画像の名前を指定します
+    
+    //UIImageViewにUIIimageを追加
+    let imageView1 = UIImageView(image:UIImage(named:"img1.jpg"))
+    let imageView2 = UIImageView(image:UIImage(named:"img2.jpg"))
+    let imageView3 = UIImageView(image:UIImage(named:"img3.jpg"))
+    
+    let imgViewList = [imageView1,imageView2,imageView3]
+    
+    for imgView:UIImageView in imgViewList {
+        if let idx = imgViewList.index(of: imgView) {
+            imgView.frame = CGRect(x: idx * 240, y: 0, width: 240, height: 240)
+            scrollView.addSubview(imgView)
+            scrollView.contentSize = CGSize(width: 240 * (idx+1), height: 240)
+        }
+    }
+}
+extension ViewController:UIScrollViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+          print("scrollViewDidScroll")
+    }
+ 
+    func scrollViewDidZoom(_ scrollView: UIScrollView){
+        
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView){
+        
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer&lt;CGPoint&gt;){
+     
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool){
+        
+    }
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView){
+        
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
+        
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -&gt; UIView? {
+        return nil
+    }
+    
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat){
+        
+    }
+    
+    func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -&gt; Bool {
+        return true
+    }
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView){
+        
+    }
+    
+    func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView){
+        
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8844446E-70E5-4A2A-833E-59BC448A2536</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给View添加ScrollView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Add_ScrollView_for_View</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

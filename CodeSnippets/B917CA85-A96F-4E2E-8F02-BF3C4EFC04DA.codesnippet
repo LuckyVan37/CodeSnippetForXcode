@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Show_Alert_Banner</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func add_ui_alertController_alertView(_ sendorView:UIView) {
+        var sendor:UIView?
+        sendor = sendorView
+        
+        let alertCtrl = UIAlertController(title: "Next View", message: "Do you want to go to the next view?", preferredStyle: .alert)
+        //警告按钮
+        let destructiveAction = UIAlertAction(title: "Is it ok?", style: .destructive) { action -&gt; Void in
+             print("destructiveAction")
+        }
+        //默认按钮
+        let defaultAction = UIAlertAction(title: "Go", style: .default) { action -&gt; Void in
+            print("defaultAction")
+            //从广播中心移除该条通知
+            NotificationCenter.default.removeObserver(self, name: .UITextFieldTextDidChange, object: nil)
+        }
+        //取消按钮
+        let cancelAction = UIAlertAction(title: "No, cancel", style: .cancel) { action -&gt; Void in
+            print("cancelAction")
+            //从广播中心移除该条通知
+            NotificationCenter.default.removeObserver(self, name: .UITextFieldTextDidChange, object: nil)
+        }
+        cancelAction.isEnabled = true
+        defaultAction.isEnabled = false
+        
+        alertCtrl.addAction(destructiveAction)
+        alertCtrl.addAction(defaultAction)
+        alertCtrl.addAction(cancelAction)
+          
+             
+        /* 给UIAlertController 添加输入框 */
+        alertCtrl.addTextField { textField in
+            textField.placeholder = "请输入账号"
+            textField.isSecureTextEntry = false
+            
+            NotificationCenter.default.addObserver(forName: .UITextFieldTextDidChange, object: nil, queue: nil) { note in
+                print(alertCtrl.actions)
+                let defaultAction1 = alertCtrl.actions[1]
+                
+                if let tf:UITextField = alertCtrl.textFields?.last {
+                    switch  tf.text?.count {
+                    case  0,1:
+                        defaultAction1.isEnabled = false
+                    default:
+                        defaultAction1.isEnabled = true
+                    }
+                }
+            }
+        }
+        
+        alertCtrl.addTextField { textField in
+            textField.placeholder = "请输入密码"
+            textField.isSecureTextEntry = true
+        }
+        
+        if   sendor != nil {
+            alertCtrl.modalPresentationStyle = .popover
+            if let popPresenter = alertCtrl.popoverPresentationController {
+                popPresenter.sourceView = sendor
+                popPresenter.sourceRect = sendor!.bounds
+            }
+        }
+        self.present(alertCtrl, animated: true, completion: {
+            print("present complect")
+        })
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B917CA85-A96F-4E2E-8F02-BF3C4EFC04DA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>弹上拉菜单窗(iOS8),进行提示操作</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Show_Alert_Banner</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

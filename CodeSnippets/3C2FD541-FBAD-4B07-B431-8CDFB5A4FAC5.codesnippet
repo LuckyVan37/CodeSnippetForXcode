@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_UI_UICollectionView_add_tableView_as_mainView_for_Controller_and_setup_delegate_datasource_config</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import MJRefresh
+
+class &lt;#ViewCtrlClass#&gt;: UIViewController {
+    
+    var requestParams:NSMutableDictionary  {
+        set {
+            self.requestParams = newValue
+        }
+        get {
+            let mutiableDict:NSMutableDictionary = ["page":0,"size":10]
+            
+            
+            return mutiableDict
+        }
+        
+    }
+    
+    
+    var collectionViewFlowLayout:UICollectionViewFlowLayout {
+        set {
+            self.collectionViewFlowLayout = newValue
+        }
+        get {
+            
+            let collectionViewLayout = UICollectionViewFlowLayout()
+            collectionViewLayout.itemSize = CGSize(width: 60, height: 60)
+            collectionViewLayout.scrollDirection = .horizontal
+            collectionViewLayout.minimumLineSpacing = 0
+            collectionViewLayout.minimumInteritemSpacing = 0
+            
+            return collectionViewLayout
+        }
+        
+    }
+    
+    
+    var collectionView:UICollectionView {
+        set {
+            self.collectionView = newValue
+        }
+        get {
+            
+            let  col = UICollectionView(frame: self.view.bounds, collectionViewLayout: self.collectionViewFlowLayout)
+            col.delegate  = self
+            col.dataSource = self
+            col.backgroundColor = UIColor.clear
+            
+            return col
+        }
+        
+    }
+    var pageCount = 0
+    var items:NSMutableArray = []
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setup_UI_UICollectionView_WithRect()
+    }
+    
+    func setup_UI_UICollectionView_WithRect() {
+        self.view.addSubview(self.collectionView)
+        
+        self.collectionView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
+            self.pageCount = 0;
+            self.requestParams.removeAllObjects()
+            
+
+            let requestParams = NSMutableDictionary();
+            requestParams["page"] = self.pageCount
+            requestParams["size"] = 10
+            
+            self.requestParams = requestParams.mutableCopy() as! NSMutableDictionary
+            
+            
+            self.loadDataWithParams(params: self.requestParams as NSDictionary, complectionHandler: {// 加载数据
+                //添加 失败 页码 -1 逻辑
+                self.collectionView.mj_footer?.endRefreshing()
+                self.collectionView.reloadData()
+            })
+        })
+        
+        self.collectionView.mj_footer = MJRefreshFooter.init(refreshingBlock: {
+             
+            self.pageCount += 1
+            self.requestParams["page"] = self.pageCount
+            
+            
+            self.loadDataWithParams(params: self.requestParams as NSDictionary, complectionHandler: {// 加载数据
+                //添加 失败 页码 -1 逻辑
+                
+                self.collectionView.mj_footer?.endRefreshing()
+                self.collectionView.reloadData()
+            })
+        })
+    }
+    
+     
+    func loadDataWithParams(params:NSDictionary,complectionHandler: (()-&gt; Void )? = nil)  {
+        //添加网络处理接口
+    }
+    
+ 
+    
+}
+ 
+
+
+extension &lt;#ViewCtrlClass#&gt;: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -&gt; Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(UICollectionViewCell.self), for: indexPath)
+
+        return cell
+    }
+    
+    
+ 
+    
+}
+
+extension &lt;#ViewCtrlClass#&gt;: UICollectionViewDelegate {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("didSelectItemAt:\(indexPath.row)")
+    }
+
+ 
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3C2FD541-FBAD-4B07-B431-8CDFB5A4FAC5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给控制器添加UICollectionView作为主视图,且实现相关的回调入口</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_UI_UICollectionView_add_tableView_as_mainView_for_Controller_and_setup_delegate_datasource_config</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

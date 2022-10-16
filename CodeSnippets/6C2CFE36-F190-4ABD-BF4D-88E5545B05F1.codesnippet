@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_GCD: dispatch_group_wait【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func dispatch_group_wait() {
+        //1.创建队列
+        let queue = DispatchQueue.global()
+        
+        //2.创建队列组
+        let group = DispatchGroup()
+            
+        
+        //3.在该方法后面的异步任务会被纳入到队列组的监听范围,进入群组
+        //dispatch_group_enter|dispatch_group_leave 必须要配对使用
+        group.enter()
+
+        queue.async {
+            print("1------\(Thread.current)")
+            //离开群组
+            group.leave()
+        }
+        
+        group.enter()
+
+        queue.async {
+            print("2------\(Thread.current)")
+            //离开群组
+            group.leave()
+        }
+        
+        
+        //拦截通知
+        /*问题?该方法是阻塞的吗?  内部本身是异步的
+            group.notify(queue: queue) {
+                 print("-------dispatch_group_notify-------")
+            }
+         */
+        //等待.死等. 直到队列组中所有的任务都执行完毕之后才能执行
+      
+        //阻塞的
+        let res = group.wait(timeout: DispatchTime.distantFuture)
+        switch res {
+        case .success:
+            print("-success---end----")
+        case .timedOut:
+            print("-timedOut---end----")
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6C2CFE36-F190-4ABD-BF4D-88E5545B05F1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程：在队列组中所有的任务都执行完毕之后，才能执行GCD之后的代码</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_GCD: dispatch_group_wait【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

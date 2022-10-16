@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_CALayer_Add_Rotation_Animation_By_Clock_Demo</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)setupClock{
+    //添加秒针
+    [self addSecondL];
+    
+    //添加分针
+    [self addMinL];
+    
+    //添加时针
+    [self addHourL];
+    
+    //添加定时器(每一秒做一件事.)
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeChange) userInfo:nil repeats:YES];
+    [self timeChange];
+}
+//每一秒调用一次.
+- (void)timeChange{
+    
+    //获取当前是多少秒.
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    //获取日历当中的组件.年,月,日 ,时,分,秒
+    //fromDate:从哪个时间
+    NSDateComponents *cmp = [calendar components:NSCalendarUnitSecond | NSCalendarUnitMinute | NSCalendarUnitHour fromDate:[NSDate date]];
+    NSInteger curSec = cmp.second;
+    NSLog(@"%ld",curSec);
+    
+    //当前旋转的角度
+    //秒针旋转的度 = 当前的秒数 * 每一秒旋转多少度
+    CGFloat secondAngle = curSec * perSecondA;
+    //让秒开始旋转.
+    self.secondL.transform = CATransform3DMakeRotation(angle2Radio(secondAngle), 0, 0, 1);
+    
+    //让分针开始旋转.
+    
+    //分针旋转的度 = 当前多少分 * 每一分旋转多少度
+    //获取当前是多少分
+    NSInteger curMin = cmp.minute;
+    CGFloat minAngle = curMin * perMinA;
+    self.minL.transform = CATransform3DMakeRotation(angle2Radio(minAngle), 0, 0, 1);
+    
+    //让时针开始旋转
+    //时针旋转的度 = 当前多少小时 * 每一小时旋转多少度
+    NSInteger curhour = cmp.hour;
+    CGFloat hourAngle = curhour * perHourA + curMin * perMinHourA;
+    self.hourL.transform = CATransform3DMakeRotation(angle2Radio(hourAngle), 0, 0, 1);
+    
+}
+- (void)addSecondL{
+    
+    CALayer *secondL = [CALayer layer];
+    secondL.bounds = CGRectMake(0, 0, 1, 80);
+    secondL.backgroundColor = [UIColor redColor].CGColor;
+    secondL.anchorPoint = CGPointMake(0.5, 1);
+    secondL.position = CGPointMake(self.imageV.bounds.size.width * 0.5, self.imageV.bounds.size.height * 0.5);
+    self.secondL = secondL;
+    [self.imageV.layer addSublayer:secondL];
+
+}
+- (void)addMinL{
+    
+    CALayer *minL = [CALayer layer];
+    minL.bounds = CGRectMake(0, 0, 3, 70);
+    minL.cornerRadius = 2;
+    minL.backgroundColor = [UIColor blackColor].CGColor;
+    minL.anchorPoint = CGPointMake(0.5, 1);
+    minL.position = CGPointMake(self.imageV.bounds.size.width * 0.5, self.imageV.bounds.size.height * 0.5);
+    self.minL = minL;
+    [self.imageV.layer addSublayer:minL];
+    
+}
+- (void)addHourL{
+    
+    CALayer *hourL = [CALayer layer];
+    hourL.bounds = CGRectMake(0, 0, 3, 60);
+    hourL.backgroundColor = [UIColor blackColor].CGColor;
+    hourL.anchorPoint = CGPointMake(0.5, 1);
+    hourL.position = CGPointMake(self.imageV.bounds.size.width * 0.5, self.imageV.bounds.size.height * 0.5);
+    self.hourL = hourL;
+    [self.imageV.layer addSublayer:hourL];
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4433B1D9-F01B-4DA0-BB50-0073236A6563</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通过时钟Demo演示layer层的旋转动画</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_CALayer_Add_Rotation_Animation_By_Clock_Demo</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

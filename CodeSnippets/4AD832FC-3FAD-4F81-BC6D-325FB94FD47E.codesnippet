@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_userDefaults_read_write</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static void CacheDataWithUserDefaultsQueue(void){
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"xmg" forKey:@"name"];
+    [defaults setInteger:10 forKey:@"age"];
+    [defaults setFloat:101.23 forKey:@"height"];
+    [defaults setDouble:101.234567 forKey:@"tmpValue"];
+    [defaults setBool:YES forKey:@"IsBoy"];
+    [defaults setURL:[NSURL URLWithString:@"https://www.baidu.com"] forKey:@"webAddress"];
+    [defaults synchronize];
+}
+static void readDataWithUserDefaultsQueue(void){
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"name ===%@",[defaults objectForKey:@"name"]);
+    NSLog(@"%ld",[defaults integerForKey:@"age"]);
+    NSLog(@"height ===%lf",[defaults floatForKey:@"height"]);
+    NSLog(@"tmpValue ===%.3lf",[defaults doubleForKey:@"tmpValue"]);
+    NSLog(@"IsBoy ===%d",[defaults boolForKey:@"IsBoy"]);
+    NSLog(@"webAddress ===%@",[defaults URLForKey:@"webAddress"]);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4AD832FC-3FAD-4F81-BC6D-325FB94FD47E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_userDefaults_read_write</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_userDefaults_read_write</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

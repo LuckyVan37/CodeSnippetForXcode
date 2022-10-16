@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UIImage_Stretch_With_CapWidth_CapHeight</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  图片拉伸
+ *
+ *  @param widthFraction  总宽几分之几处
+ *  @param heightFraction 总高几分之几处
+ *
+ *  @return 被拉伸的图片
+ */
+- (UIImage *)stretchableImageWithCapWidthFraction:(CGFloat)widthFraction
+                                CapHeightFraction:(CGFloat)heightFraction
+{
+    return [self stretchableImageWithLeftCapWidth:self.size.width * widthFraction
+                                     topCapHeight:self.size.height * heightFraction];
+ 
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>44EAF528-4EE0-47C0-8CFA-48C57B33CE34</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>图片拉伸</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UIImage_Stretch_With_CapWidth_CapHeight</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

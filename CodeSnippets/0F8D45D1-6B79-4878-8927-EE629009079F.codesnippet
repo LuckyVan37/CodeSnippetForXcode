@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Create_@IBOutlet_UIType_Var_For_A_Class</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@IBOutlet weak var &lt;#currVarNameDesc#&gt;:&lt;#currVarClassDesc#&gt;!</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0F8D45D1-6B79-4878-8927-EE629009079F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>在一个控制器类中创建一个与Nib相连的弱引用变量</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Create_@IBOutlet_UIType_Var_For_A_Class</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

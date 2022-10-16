@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Create_AttributeString_For_Txt_ContainerUIInstance</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let plainTxt = "\(&lt;#参数传递#&gt;) &lt;#拼接描述desc#&gt;"
+        let attrPlainTxt:NSMutableAttributedString = NSMutableAttributedString(string: plainTxt)
+        let attributesForPlainTxt:Dictionary = [NSAttributedStringKey.&lt;#具体属性.xxxx#&gt;:&lt;#属性值#&gt;]
+        let attrPlainTxtRange = (plainTxt as NSString).range(of: title)
+        attrPlainTxt.setAttributes(attributesForPlainTxt, range: attrPlainTxtRange)
+        &lt;#富文本字符串的UI容器#&gt;.attributedText = attrPlainTxt</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2142D4F8-913E-4193-91A0-C9F10A66C7E8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给文本容器UI控件添加富文本字符串</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Create_AttributeString_For_Txt_ContainerUIInstance</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_UI_UITableView_add_tableView_as_mainView_for_Controller_and_setup_delegate_datasource_config</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+
+import MJRefresh
+
+class &lt;#viewCtrlClass#&gt;: &lt;#viewCtrlSuperClass#&gt; {
+ 
+    var tableView:UITableView = {
+        let tableView = UITableView(frame: CGRect.zero, style: .plain)
+        tableView.tableFooterView = UIView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.clear
+        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
+        
+        return tableView
+    }()
+    var requestParams:[String:Any] = [:]
+    var pageCount:Int = 0
+    var items:NSMutableArray?
+    var tableHeader:UIView?
+    
+     
+     
+    
+    func setup_UI_UITableView_WithRect(frame:CGRect){
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.frame = self.view.bounds 
+        self.navigationItem.leftBarButtonItem = self.editButtonItem  
+        let imgBarBtnAdd = UIImage(named: "icon_add.png")
+        //        let barBtnAddRow = UIBarButtonItem(image: imgBarBtnAdd, style: .plain, target: self, action: "insertNewRow:")
+                
+        let barBtnAddRow = UIBarButtonItem(image: imgBarBtnAdd, style: .plain, target: self, action: #selector(insertNewRow(_:)))
+        self.navigationItem.setRightBarButton(barBtnAddRow, animated: true)
+        
+        let tableView:UITableView = self.tableView
+        tableView.sectionIndexColor = UIColor.red;  // 1.设置索引条文字颜色
+         
+        tableView.sectionIndexBackgroundColor = UIColor.orange;// 2.设置索引条背景色
+        self.view.addSubview(tableView);
+        
+        tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {// 3.设置下拉刷新
+            self.pageCount = 0;
+            self.requestParams.removeAll();
+
+            let requestParams = NSMutableDictionary();
+            requestParams["page"] = self.pageCount
+            requestParams["size"] = 10
+            
+            self.requestParams = requestParams.mutableCopy() as! [String : Any];
+            
+            self.loadDataWithParams(params: self.requestParams as NSDictionary, complectionHandler: {// 加载数据
+                tableView.mj_header?.endRefreshing()
+                tableView.reloadData()
+            })
+        })
+        
+        tableView.mj_footer = MJRefreshAutoFooter.init(refreshingBlock: {// 4.设置上拉刷新
+            self.pageCount += 1
+            self.requestParams["page"] = self.pageCount
+            
+            self.loadDataWithParams(params: self.requestParams as NSDictionary, complectionHandler: {// 加载数据
+                //添加 失败 页码 -1 逻辑
+                tableView.mj_footer?.endRefreshing()
+                tableView.reloadData()
+            })
+        })
+    }
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        self.tableView.setEditing(!self.tableView.isEditing, animated: true)
+    }
+    func loadDataWithParams(params:NSDictionary,complectionHandler: (()-&gt; Void )? = nil)  {
+        //添加网络处理接口
+    }
+    @objc func insertNewRow(_ sender: UIBarButtonItem) {
+         self.items.append(self.items.count+1)
+         let indexOfLastRow = IndexPath(row: self.items.count-1, section: 0)
+         let arrIndexesToInsert = [indexOfLastRow]
+         self.tableView.insertRows(at: arrIndexesToInsert, with: .left)
+         self.tableView.scrollToRow(at: indexOfLastRow, at: .bottom, animated: true)
+    }
+}
+
+ extension &lt;#viewCtrlClass#&gt;: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -&gt; Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self))! as UITableViewCell
+        
+        switch indexPath.section {
+            case 0:
+                cell.textLabel?.text = "0"
+            case 1:
+                cell.textLabel?.text = "1"
+            default:
+                cell.textLabel?.text = "Unknown"
+        }
+        
+        let flowerImage: UIImage=UIImage(named: cell.textLabel!.text!)!
+        cell.imageView!.image=flowerImage
+        
+        return cell
+    }
+        
+    func sectionIndexTitles(for tableView: UITableView) -&gt; [String]? {
+//        if let titles:[String] = self.items?.value(forKeyPath: "") {
+//             return titles
+//        }else {
+//            return []
+//        }
+        return []
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -&gt; String? {
+        if (section == 0) {
+            return "&lt;#desc#&gt;"
+        } else {
+            return "&lt;#desc#&gt;"
+        }
+    }
+
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -&gt; String? {
+        if (section == 0) {
+            return "&lt;#desc#&gt;"
+        } else {
+            return "&lt;#desc#&gt;"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            self.items.remove(at: indexPath.row)
+            let arrIndexesToDelete = [indexPath]
+            self.tableView.deleteRows(at: arrIndexesToDelete, with: .right)
+        } else if (editingStyle == .insert) {
+            
+        }
+    }
+
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let rowContent = self.items[sourceIndexPath.row]
+        self.items.remove(at: sourceIndexPath.row)
+        self.items.insert(rowContent, at: destinationIndexPath.row)
+    }
+    
+  
+    
+        
+        
+     
+}
+
+
+extension &lt;#viewCtrlClass#&gt;: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -&gt; CGFloat {//设置行高
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -&gt; CGFloat {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -&gt; CGFloat {
+        return 37
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("点击了第\(indexPath.section)章节,第\(indexPath.row)行")
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1CBB6DA7-1DF2-4452-9D31-949E79D73C09</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给控制器添加表单视图作为主视图,且实现相关的回调入口</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_UI_UITableView_add_tableView_as_mainView_for_Controller_and_setup_delegate_datasource_config</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

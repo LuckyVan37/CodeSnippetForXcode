@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_GCD: dispatch_async【ExcuteHandler_On_Serial_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+//异步函数+串行队列:会开线程,开一条线程,队列中的任务是串行执行的
+-(void)asyncSerial
+{
+    //1.创建队列
+    dispatch_queue_t queue = dispatch_queue_create("download", DISPATCH_QUEUE_SERIAL);
+    //2.封装操作
+    dispatch_async(queue, ^{
+        NSLog(@"download1----%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"download2----%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"download3----%@",[NSThread currentThread]);
+    });
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D4E9E582-F313-47BD-B14F-A19C75D39925</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程：按照异步串行队列执行代码</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_GCD: dispatch_async【ExcuteHandler_On_Serial_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

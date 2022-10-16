@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UIImage_Vendor's Kit_Download_Image_with_ImageURLPath_by_SDWebImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:@"&lt;#imgUrlStr#&gt;"] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        NSLog(@"%f",1.0 * receivedSize / expectedSize);
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        //得到图片
+        &lt;#imgViewInstance#&gt;.image = image;
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F39F1DC8-0E63-4A95-9E36-1868D7EDCDBC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>SDWebImageManager:下载网络图片</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UIImage_Vendor's Kit_Download_Image_with_ImageURLPath_by_SDWebImage</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_Create_UIButton_With_BackgroundImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  UIButton *&lt;#name#&gt;Btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [&lt;#name#&gt;Btn setBackgroundImage:[[UIImage imageNamed:&lt;#imgName#&gt;]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [&lt;#name#&gt;Btn setBackgroundImage:[[UIImage imageNamed:&lt;#imgName#&gt;]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateSelected]; 
+    [&lt;#superView#&gt; addSubview:&lt;#name#&gt;Btn];
+    [&lt;#name#&gt;Btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(&lt;#value#&gt;);
+        make.top.equalTo(&lt;#value#&gt;);
+        make.width.equalTo(&lt;#value#&gt;);
+        make.height.equalTo(&lt;#value#&gt;);
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3059E40C-48B1-4BB9-B762-DA4E40BB6F9C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_UI_Create_UIButton_With_BackgroundImage</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_Create_UIButton_With_BackgroundImage</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

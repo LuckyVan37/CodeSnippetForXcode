@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UITableView_add_titles_for_section_at_index</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 1.设置索引条文字颜色
+self.tableView.sectionIndexColor = [UIColor redColor];
+// 2.设置索引条背景色
+self.tableView.sectionIndexBackgroundColor = [UIColor orangeColor];
+- (NSArray&lt;NSString *&gt; *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    // 抽取self.carGroups数组中每一个元素(XMGCarGroup对象)的title属性的值,放在新的数组中返回
+    return [self.&lt;#ModelListInstance#&gt; valueForKeyPath:&lt;#keyPath#&gt;];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B9F8187D-28F5-49C5-B1A4-C956542BD069</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给表单视图按照Section篇章进行添加索引</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UITableView_add_titles_for_section_at_index</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_NSOperation_NSInvocationOperation_ExcuteHandler_OnCurrThread</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //1.封装操作 在当前线程下继续执行
+    /*
+     第一个参数：目标对象
+     第二个参数：该操作要调用的方法，最多接受一个参数
+     第三个参数：调用方法传递的参数，如果方法不接受参数，那么该值传nil
+     */
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc]
+                                        initWithTarget:self selector:@selector(run) object:nil];
+    //2.启动操作
+    [operation start];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>825AB098-9832-4C7A-A5DD-C67CDB022049</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NSInvocationOperation:在当前线程下做操作</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_NSOperation_NSInvocationOperation_ExcuteHandler_OnCurrThread</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

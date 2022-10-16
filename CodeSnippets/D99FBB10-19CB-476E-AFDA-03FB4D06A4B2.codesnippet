@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_GCD: dispatch_after【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> //延迟执行代码
+ let globalQueue = DispatchQueue.global(qos: .default)
+        let dispatchTime = DispatchTime(uptimeNanoseconds: &lt;#delayInSeconds#&gt;)
+        globalQueue.asyncAfter(deadline: dispatchTime, execute: {
+            &lt;#code to be executed after a specified delay#&gt;
+        })
+ //或者
+ DispatchQueue.global(qos: .default).asyncAfter(deadline: DispatchTime.init(uptimeNanoseconds: &lt;#T##UInt64#&gt;), execute: {
+     &lt;#code to be executed after a specified delay#&gt;
+ })</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D99FBB10-19CB-476E-AFDA-03FB4D06A4B2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string> GCD多线程编程:延迟执行代码块</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_GCD: dispatch_after【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

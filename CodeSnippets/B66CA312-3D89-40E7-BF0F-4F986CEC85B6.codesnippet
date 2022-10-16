@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_Cutline</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> UIView *cutline = [[UIView alloc]initWithFrame:CGRectZero];
+    [cutline setBackgroundColor:[[UIColor colorWithHex:0xE5E5E5] colorWithAlphaComponent:1]];
+    [&lt;#superView#&gt; addSubview:cutline];
+    [cutline mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(&lt;#value#&gt;);
+        make.right.equalTo(&lt;#value#&gt;);
+        make.top.equalTo(&lt;#value#&gt;);
+        make.height.equalTo(@(0.5));
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B66CA312-3D89-40E7-BF0F-4F986CEC85B6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Create_Cutline</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_Cutline</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

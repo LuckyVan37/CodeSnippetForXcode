@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_GCD: dispatch_group_wait【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    //1.创建队列
+    dispatch_queue_t queue =dispatch_get_global_queue(0, 0);
+    
+    //2.创建队列组
+    dispatch_group_t group = dispatch_group_create();
+    
+    //3.在该方法后面的异步任务会被纳入到队列组的监听范围,进入群组
+    //dispatch_group_enter|dispatch_group_leave 必须要配对使用
+    dispatch_group_enter(group);
+    
+    dispatch_async(queue, ^{
+        NSLog(@"1----%@",[NSThread currentThread]);
+        
+        //离开群组
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_enter(group);
+    
+    dispatch_async(queue, ^{
+        NSLog(@"2----%@",[NSThread currentThread]);
+    
+        //离开群组
+        dispatch_group_leave(group);
+    });
+    
+    
+    //拦截通知
+    //问题?该方法是阻塞的吗?  内部本身是异步的
+//    dispatch_group_notify(group, queue, ^{
+//        NSLog(@"-------dispatch_group_notify-------");
+//    });
+    //等待.死等. 直到队列组中所有的任务都执行完毕之后才能执行
+    //阻塞的
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    NSLog(@"----end----");</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>45B2F507-69E6-4BCD-AD80-009C76C86478</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程：在队列组中所有的任务都执行完毕之后，才能执行GCD之后的代码</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_GCD: dispatch_group_wait【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

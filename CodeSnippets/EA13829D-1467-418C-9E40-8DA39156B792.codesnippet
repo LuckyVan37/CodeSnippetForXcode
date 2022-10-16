@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_CALayer_Add3D_Scale_Animation_With_CATransform3D</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>      
+
+[UIView animateWithDuration:1 animations:^{ 
+    //缩放 x y z 轴的缩放比例
+    &lt;#viewInstance#&gt;.layer.transform = CATransform3DMakeScale(&lt;#CGFloat sx#&gt;, &lt;#CGFloat sy#&gt;, &lt;#CGFloat sz#&gt;);
+}];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EA13829D-1467-418C-9E40-8DA39156B792</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>做3d缩放动画</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_CALayer_Add3D_Scale_Animation_With_CATransform3D</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

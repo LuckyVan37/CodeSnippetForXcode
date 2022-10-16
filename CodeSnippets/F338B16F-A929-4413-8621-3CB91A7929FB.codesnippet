@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_perform_storyboard_segue_event_with_segue_identifier</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>self.performSegue(withIdentifier: "&lt;#SegueId#&gt;", sender: self)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F338B16F-A929-4413-8621-3CB91A7929FB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通过SegueId  执行故事版中的Segue事件</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_perform_storyboard_segue_event_with_segue_identifier</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

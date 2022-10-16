@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_switch_on_serveral_position</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+let x = 1000
+switch x {
+    case (0...100):
+         print("0&lt;= x &lt;= 100")
+        
+    case (101...200):
+         print("101&lt;= x &lt;= 200")
+    case (1000...9999):
+         print("1000&lt;= x &lt;= 9999")
+    default:
+     print(x)
+}
+
+
+let range: PartialRangeThrough&lt;Int&gt; = ...5
+
+//数字、和区间选项
+var number = 3
+switch number {
+case 1:
+    print("数字是1")
+case 2:
+    print("数字是2")
+case 2...6:
+    print("数字是在2到6之间")
+default:
+    print("数字不是1,是\(number)")
+}
+
+
+//枚举值选项
+enum Answer{
+    case right,wrong,doNotKnow
+}
+let anwser:Answer = .right
+switch anwser {
+case .right:
+     print("答案正确")
+case .wrong:
+    print("答案错误")
+default:
+     print("不知道答案是正确还是错误")
+    break
+}
+
+
+//switch也支持Character、String类型
+//使用fallthrough可以实现贯穿效果
+//case、default后面至少要有一条语句（必要的时候,可以不写逻辑只写break)
+let name = "luckyVan"
+switch name {
+case "luckyVan":
+     fallthrough
+case "riginaChen":
+    print("人名核准正确")
+default:
+     break
+}
+
+
+let character: Character = "a"
+switch character {
+case "a", "A":
+    print("The letter A")
+default:
+    print("Not the letter A")
+} // The letter A
+//区间匹配
+let aCount = 50
+
+switch aCount {
+    case 0:
+         print("none")
+    case 1..&lt;5:
+        print("a few")
+    case 5..&lt;12:
+        print("several")
+    case 12..&lt;100:
+        print("dozens of")
+    case 100..&lt;1000:
+        print("hundreds of")
+    default:
+        print("many")
+        break
+}
+//元组匹配   点是否 在 坐标系上的二维图形 上
+let point = (1, 1)
+switch point {
+    case (0, 0):
+        print("the origin")
+    case (_, 0):
+        print("on the x-axis")
+    case (0, _):
+        print("on the y-axis")
+    case (-2...2, -2...2):
+        print("inside the box")
+default:
+    print("outside of the box")
+} // inside the box
+//值绑定
+let point2  = (2,0)
+switch point2 {
+case (let x, 0):
+    print("on the x-axis with an x value of \(x)")
+case (0, let y):
+    print("on the y-axis with a y value of \(y)")
+case let(x,y):
+    print("somewhere else at (\(x), \(y))")
+}
+//where
+let point3 = (1, -1)
+switch point3 {
+    case let (x, y) where x == y:
+        print("on the line x == y")
+    case let (x, y) where x == -y:
+        print("on the line x == -y")
+    case let (x, y):
+        print("(\(x), \(y)) is just some arbitrary point")
+} // on the line x == -y
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C66C7172-6A88-4347-9881-ADAFCBE65F4D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>各种Swift使用方式</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_switch_on_serveral_position</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

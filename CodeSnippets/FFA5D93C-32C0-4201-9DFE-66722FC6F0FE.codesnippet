@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Foundation_Data_Store_Handler_With_NSFileManager</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)storeData:(id)data{
+    if(!data)return; 
+    NSString *docDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSString *fileStorePath  = [docDir stringByAppendingPathComponent:@"&lt;#fileName_Like:xxx.scv#&gt;"];
+    if (![[NSFileManager defaultManager]fileExistsAtPath:fileStorePath]) {
+        [[NSFileManager defaultManager]createFileAtPath:fileStorePath contents:nil attributes:nil];
+    }
+    
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:fileStorePath];
+    [fileHandle seekToEndOfFile];
+    [fileHandle writeData:data];
+    [fileHandle closeFile];
+}
+
+- (id)fentchDataWithCacheFileName:(NSString*)fileName{
+    id data = nil;
+    NSString *docDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSString *fileStorePath  = [docDir stringByAppendingPathComponent:fileName];
+    
+    if ([[NSFileManager defaultManager]fileExistsAtPath:fileStorePath]) {
+        NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:fileStorePath];
+        data = [fileHandle availableData];
+        [fileHandle closeFile];
+    }
+    return  data;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FFA5D93C-32C0-4201-9DFE-66722FC6F0FE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通过文件管理器把数据写成文件进行数据存储</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Foundation_Data_Store_Handler_With_NSFileManager</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

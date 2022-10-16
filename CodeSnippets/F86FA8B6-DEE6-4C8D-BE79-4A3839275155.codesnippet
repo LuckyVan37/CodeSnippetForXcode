@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Override_Set_Func_And_Get_Func_for_A_Class_Var</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    override var &lt;#override_var_value_name#&gt;: &lt;#override_var_value_type#&gt;{
+        get{
+            return super.&lt;#override_var_value_name#&gt;
+        }
+        set{
+            //wirte some codes to do somethings
+            super.&lt;#override_var_value_name#&gt; = newValue
+             //wirte some codes to do somethings
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F86FA8B6-DEE6-4C8D-BE79-4A3839275155</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给一个变量重写,set、get函数的实现</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Override_Set_Func_And_Get_Func_for_A_Class_Var</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

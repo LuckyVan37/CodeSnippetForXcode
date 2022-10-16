@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_KVO_Observering</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>{
+        
+        /*
+     作用:给对象绑定一个监听器(观察者)
+     - Observer 观察者
+     - KeyPath 要监听的属性
+     - options 选项(方法方法中拿到属性值)
+     */
+    [&lt;#instance#&gt; addObserver:&lt;#observer#&gt; forKeyPath:&lt;#observeringKeyPathLikeXXX/XXX.XXX#&gt; options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+     
+    
+
+    
+    // 移除监听
+    [&lt;#instance#&gt; removeObserver:&lt;#observer#&gt; forKeyPath:&lt;#observeringKeyPathLikeXXX/XXX.XXX#&gt;];
+}
+
+/**
+ *  当监听的属性值发生改变
+ *
+ *  @param keyPath 要改变的属性
+ *  @param object  要改变的属性所属的对象
+ *  @param change  改变的内容
+ *  @param context 上下文
+ */
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary&lt;NSString *,id&gt; *)change context:(void *)context{
+  
+    NSNumber *kind = change[@"kind"];
+    NSString *oldValue = change[@"old"];
+    NSString *newValue = change[@"new"];
+    NSLog(@"\n keyPath:%@\n kind:%@\n oldValue:%@\n newValue:%@\n", keyPath, kind, oldValue,newValue);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1DF39652-264D-49A7-B844-EEF8478C3101</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_KVO_Observering</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_KVO_Observering</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

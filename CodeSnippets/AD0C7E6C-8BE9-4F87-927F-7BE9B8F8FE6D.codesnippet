@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_Podfile_With_HPPaaS</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  source 'git@gitee.com:LuckyVan_admin/HPPaaSSpec.git'
+	source 'https://github.com/CocoaPods/Specs.git'
+	#source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+
+
+	platform :ios, '10.0'
+
+# 添加Flutter模块路径
+flutter_application_path = '&lt;#flutter模块的路径#&gt;'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
+	# 这里调用的全部库
+	def shared_pods
+	  # Comment the next line if you don't want to use dynamic frameworks
+	   
+    pod 'Hybrid_Proj_Home'
+    pod 'Hybrid_Proj_Life'
+    pod 'Hybrid_Proj_Community'
+    pod 'Hybrid_Proj_Message'
+    pod 'Hybrid_Proj_Mine'
+    pod 'Hybrid_Proj_Context'
+	end
+
+
+	target '&lt;#引入依赖包工程的目标Target名称#&gt;' do
+	  # Comment the next line if you don't want to use dynamic frameworks
+	#  use_frameworks!
+	  shared_pods
+	  static_framework = true
+      
+      install_all_flutter_pods(flutter_application_path)
+      # 引入flutter模块
+      post_install do |installer|
+        flutter_post_install(installer)
+      end
+
+	  
+	end
+   
+ </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AD0C7E6C-8BE9-4F87-927F-7BE9B8F8FE6D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Ruby</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>基于HPPaaS开发套件的依赖包描述</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_Podfile_With_HPPaaS</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

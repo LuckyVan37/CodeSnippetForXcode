@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_Create_UITextFields</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UITextField *&lt;#name#&gt;TextFields = [[UITextField alloc]initWithFrame:CGRectZero];
+&lt;#name#&gt;TextFields.placeholder = @"";
+NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc]initWithString:&lt;#name#&gt;TextFields.text];
+[attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, &lt;#name#&gt;TextFields.text.length)];
+&lt;#name#&gt;TextFields.attributedPlaceholder = attrStr;
+&lt;#name#&gt;TextFields.font = [UIFont systemFontOfSize:15];
+&lt;#name#&gt;TextFields.textColor = [UIColor orangeColor];
+&lt;#name#&gt;TextFields.text = @"";
+&lt;#name#&gt;TextFields.delegate = self;
+[&lt;#superView#&gt; addSubview:&lt;#name#&gt;TextFields];
+[&lt;#name#&gt;TextFields mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.top.equalTo(@(&lt;#value#&gt;));
+    make.width.equalTo(@(&lt;#value#&gt;));
+    make.height.equalTo(@(&lt;#value#&gt;));
+}];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>200A8D33-C775-4FD7-844D-B62751C333B2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_UI_Create_UITextFields</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_Create_UITextFields</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

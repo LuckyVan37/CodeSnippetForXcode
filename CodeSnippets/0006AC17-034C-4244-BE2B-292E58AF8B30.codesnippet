@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UITableCell_Delete_Row_With_Animation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.&lt;#tableViewDataList#&gt; removeObjectAtIndex:indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[&lt;#deleteIndexPath#&gt;] withRowAnimation:UITableViewRowAnimationTop];
+}
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"&lt;#DeleteDescTitle#&gt;";
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0006AC17-034C-4244-BE2B-292E58AF8B30</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>删除单元格且以动画的形式展示变化</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UITableCell_Delete_Row_With_Animation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

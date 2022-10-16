@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Str_CutOut_With_Range</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static void ExcuteStrCutOutQueue(void)
+{
+    NSString *str = @"&lt;head&gt;小哥哥&lt;/head&gt;";
+    /*
+     &lt;head&gt;小哥哥&lt;/head&gt; --&gt; 小哥哥&lt;/head&gt;  --&gt; 小哥哥
+     &lt;head&gt;小哥哥&lt;/head&gt; --&gt; &lt;head&gt;小哥哥  --&gt; 小哥哥
+    */
+    NSLog(@"str = %@", str);
+    NSUInteger location = [str rangeOfString:@"&gt;"].location + 1;
+    NSString *newStr = [str substringFromIndex:location];
+    NSLog(@"newStr = %@", newStr);
+    
+    location = [newStr rangeOfString:@"&lt;/"].location;
+    // 改变了指针的指向, 并不是修改了原来的字符串
+    newStr = [newStr substringToIndex:location];
+    NSLog(@"newStr = %@", newStr);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B5F64C3F-89D4-4B7E-80DA-D928158BD2EA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_Str_CutOut_With_Range</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Str_CutOut_With_Range</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

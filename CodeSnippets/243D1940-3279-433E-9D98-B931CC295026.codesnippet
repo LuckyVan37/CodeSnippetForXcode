@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_Create_pre_compile_command__with_conditions</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#ifdef &lt;#Condition1#&gt; //Like DEBUG
+    //语句
+#elif &lt;#Condition2#&gt;
+
+#else
+
+#endif</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>243D1940-3279-433E-9D98-B931CC295026</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>添加条件预编译指令</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_Create_pre_compile_command__with_conditions</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

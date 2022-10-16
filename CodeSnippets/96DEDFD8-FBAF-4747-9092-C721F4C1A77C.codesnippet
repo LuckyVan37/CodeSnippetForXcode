@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_API_MPaaS_Add_JSAPI</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>else if ([jsApiName isEqualToString:@"&lt;#jsApiName#&gt;"]){//&lt;#jsApiName#&gt;
+    [self &lt;#jsApiName#&gt;WithData:data callback:callback];
+}
+- (void)&lt;#selDescName#&gt;WithData:(NSDictionary*)data callback:(PSDJsApiResponseCallbackBlock)callback{
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>96DEDFD8-FBAF-4747-9092-C721F4C1A77C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>OC_API_MPaaS_Add_JSAPI</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_API_MPaaS_Add_JSAPI</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

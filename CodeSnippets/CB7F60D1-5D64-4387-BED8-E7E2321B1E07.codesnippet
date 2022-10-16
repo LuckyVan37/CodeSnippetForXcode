@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Add_Observer_For_UITextField_Core_Event</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  private var beginEditingObserver:AnyObject!
+        
+        private var endEditingObserver:AnyObject!
+        
+        private var didChangeTextObserver:AnyObject!
+        
+        
+        self.beginEditingObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidBeginEditing, object: nil, queue: nil, using: {
+            [unowned self](note:Notification!) in
+            
+            if self == note.object as! DKTextField &amp;&amp; self.isSecureTextEntry {
+                self.text = ""
+                self.insertText(self.password)
+            }
+            
+            
+        })
+        
+        self.endEditingObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidEndEditing, object: nil, queue: nil, using: {
+            [unowned self](note:Notification!) in
+            
+            if self == note.object as! DKTextField {
+            
+                self.password = self.text!
+                
+            }
+        })
+        
+        
+        self.didChangeTextObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: nil, queue: nil, using: {
+            [unowned self](note:Notification!) in
+            
+            if self == note.object as! DKTextField {
+            
+                self.password = self.text!
+                
+            }
+        })
+        
+        
+        NotificationCenter.default.removeObserver(self.beginEditingObserver)
+        NotificationCenter.default.removeObserver(self.endEditingObserver)
+        NotificationCenter.default.removeObserver(self.didChangeTextObserver)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CB7F60D1-5D64-4387-BED8-E7E2321B1E07</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给TextField核心事件添加监听</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Add_Observer_For_UITextField_Core_Event</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

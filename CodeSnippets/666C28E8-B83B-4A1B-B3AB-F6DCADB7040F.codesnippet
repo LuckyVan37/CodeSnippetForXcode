@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_NSOperation_NSBlockOperation_MainThread_Add_SubThread</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        //在主线程中执行
+        NSLog(@"---download1--%@",[NSThread currentThread]);
+    }];
+    
+    //2.追加操作，追加的操作在子线程中执行
+    [operation addExecutionBlock:^{
+        NSLog(@"---download2--%@",[NSThread currentThread]);
+    }];
+    
+    [operation addExecutionBlock:^{
+         NSLog(@"---download3--%@",[NSThread currentThread]);
+    }]; 
+    //3.启动执行操作
+    [operation start];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>666C28E8-B83B-4A1B-B3AB-F6DCADB7040F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NSBlockOperation:主线程+子线程</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_NSOperation_NSBlockOperation_MainThread_Add_SubThread</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

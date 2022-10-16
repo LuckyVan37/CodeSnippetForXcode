@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_UI_UIImageView_setImage_withURLPat_by_SDWebImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        [&lt;#UIImageViewInstance#&gt; sd_setImageWithURL:[NSURL URLWithString:@"&lt;#urlString#&gt;"] placeholderImage:[UIImage imageNamed:@"&lt;#placeholderImgName#&gt;"]];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8009CBB0-3A3D-4D59-9872-AD68A0796596</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通过接口地址地址给UIImageview设置网络图片</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_UI_UIImageView_setImage_withURLPat_by_SDWebImage</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

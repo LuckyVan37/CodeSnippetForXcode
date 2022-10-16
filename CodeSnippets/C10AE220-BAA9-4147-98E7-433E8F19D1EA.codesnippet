@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Swift_Add_UI_Webview_For_View_Loading_Remote_Html</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>func add_ui_webview() {
+        let ui_webView = UIWebView(frame: self.view.bounds)
+        self.view.addSubview(ui_webView)
+        ui_webView.delegate = self
+        if let url = URL(string: "https://www.baidu.com") {
+            let url_request = URLRequest(url: url)
+            ui_webView.loadRequest(url_request)
+        }
+    }
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -&gt; Bool {
+        if let _urlstr:String = request.url?.absoluteString{
+            if(_urlstr.hasPrefix(_prefix)){
+                let _param = _urlstr.replacingOccurrences(of: _prefix, with: "")
+                webView.stringByEvaluatingJavaScript(from: "playAudioFn('" + _param + "')")
+                return Bool(false)
+            }
+        }
+        return Bool(true)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C10AE220-BAA9-4147-98E7-433E8F19D1EA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>给View添加UIWebView_加载远程H5</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift_Add_UI_Webview_For_View_Loading_Remote_Html</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

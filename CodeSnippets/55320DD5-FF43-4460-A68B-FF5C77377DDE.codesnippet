@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OC_gcd_dispatch_Async_Concurrent</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+//异步函数+并发队列:会开启多条线程,队列中的任务是并发执行
+-(void)asyncConcurrent{
+    //1.创建队列
+    /*
+     第一个参数:C语言的字符串,标签
+     第二个参数:队列的类型
+        DISPATCH_QUEUE_CONCURRENT:并发
+        DISPATCH_QUEUE_SERIAL:串行
+     */
+    //dispatch_queue_t queue = dispatch_queue_create("com.520it.download", DISPATCH_QUEUE_CONCURRENT);
+    
+    //获得全局并发队列
+    /*
+     第一个参数:优先级
+     第二个参数:
+     */
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    NSLog(@"---satrt----");
+    //2.1&gt;封装任务2&gt;添加任务到队列中
+    /*
+     第一个参数:队列
+     第二个参数:要执行的任务
+     */
+    dispatch_async(queue, ^{
+        NSLog(@"download1----%@",[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"download2----%@",[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"download3----%@",[NSThread currentThread]);
+    });
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>55320DD5-FF43-4460-A68B-FF5C77377DDE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD多线程编程:异步执行多线程并发队列代码块</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC_GCD: dispatch_async【ExcuteHandler_On_Global_Queue】</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
